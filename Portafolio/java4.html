@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/talleresPseint.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="java1.html">TALLER 1</a>
+        <a href="java2.html">TALLER 2</a>
+        <a href="java3.html">TALLER 3</a>
+        <a href="portafolio.html">VOLVER A INICIO</a>
+    </nav>
+
+    <div class="contenedor">
+        <section>
+            <p><b>Punto 1</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller4/Punto1.java">Github</a>
+            <p>
+                Crear un vector de tipo Entero con 5 posiciones, llenarlo con información solicitada al usuario. Después de recoger toda la información, se requiere imprimir el índice de cada posición en el arreglo con su valor de la siguiente manera: <br>
+                [0] = 55 <br>
+                [1] = 99  <br>
+                [2] = 11 <br>
+                [3] = 56 <br>
+                [4] = 69
+            </p>
+            <pre>
+            <code>
+                package Taller4;
+
+                public class Punto1 {
+                
+                    public static void main(String[] args) {
+                       Integer[] valor = {55 , 99, 11, 56 , 69};
+                
+                       for(int i = 0; i < valor.length; i++){
+                           System.out.println("[" + i + "]= " + valor[i]);
+                       }
+                
+                       System.exit(0);
+                    }
+                }
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 2</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller4/Punto2.java">Github</a>
+            <p>
+                Crear un arreglo de números enteros de 20 posiciones, el cual, debe ser llenado con números aleatorios entre 1 y 100; después de haber llenado dicho arreglo, se debe volver a recorrer utilizando un ciclo diferente al que se usó para llenarse e imprimir los números pares e impares. Ejemplo
+                Números pares: 2, 4, 6, 8, 10 <br>
+                Números impares: 1, 3, 5, 7, 9
+            </p>
+            <pre>
+            <code>
+                package Taller4;
+
+                public class Punto2 {
+                    public static Integer [] numerosRandom = new Integer[20];
+                
+                    public static void main(String[] args) {
+                
+                        System.out.print("NUMEROS PARES: ");
+                        for(int i = 0; i < numerosRandom.length; i++){
+                            numerosRandom[i] = (int)Math.floor(Math.random()*(1-100+1)+100);  //Math.floor(Math.random()*(N-M+1)+M);  Valor entre M y N, ambos incluidos. M < N
+                
+                            if(numerosRandom[i] % 2 == 0){
+                                System.out.print(numerosRandom[i] + " ");
+                            }
+                        }
+                        System.out.println();
+                        System.out.print("NUMEROS IMPARES: ");
+                
+                        for(int j= 0; j < numerosRandom.length; j++){
+                            if (numerosRandom[j] % 2 != 0){
+                                System.out.print(numerosRandom[j] + " ");
+                            }
+                        }
+                
+                        System.exit(0);
+                    }
+                }
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 3</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller4/Punto3.java">Github</a>
+            <p>
+                Imprimir los números primos del 1 al 1000, el resultado debe ser buscado de forma matemática.
+            </p>
+            <pre>
+            <code>
+                package Taller4;
+
+                public class Punto3 {
+                    public static Integer[] primo = new Integer[1000];
+                    public static Integer contador = 0;
+                
+                    public static void main(String[] args) {
+                
+                        System.out.print("LOS NUMEROS PRIMOS SON: ");
+                
+                        for(int i = 0 ; i < primo.length; i++){
+                            primo[i] = i + 1;
+                
+                            for(int j = 1; j <= i+1 ; j++){
+                                if(primo[i] % j == 0 ){
+                                    contador = contador + 1;
+                                }
+                            }
+                
+                            if(contador == 2){
+                                System.out.println(primo[i] + " ");
+                            }
+                            if(contador > 2){
+                                contador = 0;
+                            }
+                        }
+                        System.exit(0);
+                    }
+                }           
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 4</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller4/Punto4.java">Github</a>
+            <p>
+                Dada la siguiente matriz bidimensional, el cual debe de quemar en el código <br>
+                01 02 03 04 05  <br>
+                06 07 08 09 10 <br>
+                11 12 13 14 15 <br>
+                16 17 18 19 20 <br>
+                Utilizando el conocimiento adquirido, a excepción de hacerlo de forma manual, imprima la siguiente matriz bidimensional. <br>
+                01 02 03 04 05 <br>
+                10 09 08 07 06 <br>
+                11 12 13 14 15 <br>
+                20 19 18 17 16
+            </p>
+            <pre>
+            <code>
+                package Taller4;
+
+                public class Punto4 {
+                    public static String[][] matriz1 = new String[4][5];
+                    //[filas,columnas]
+                    public static String x;
+                
+                    public static void main(String[] args) {
+                
+                        System.out.println("MATRIZ 1");
+                
+                        for(int fila = 0; fila <= 3 ; fila++){
+                
+                            for(int columna = 0; columna <= 4; columna++){
+                
+                                if(fila == 0){
+                                    x = Integer.toString(columna + 1);
+                                    matriz1[fila][columna] = "0" + x;
+                                    System.out.print(matriz1[fila][columna] + " ");
+                                }else if(fila == 1){
+                                    x = Integer.toString(columna + 6);
+                                    if(columna == 4){
+                                        matriz1[fila][columna] = x;
+                                        System.out.print(matriz1[fila][columna] + " ");
+                                    }else {
+                                        matriz1[fila][columna] = "0" + x;
+                                        System.out.print(matriz1[fila][columna] + " ");
+                                    }
+                                }else if(fila == 2){
+                                    x = Integer.toString(columna + 11);
+                                    matriz1[fila][columna] = x;
+                                    System.out.print(matriz1[fila][columna] + " ");
+                                }else {
+                                    x = Integer.toString(columna + 16);
+                                    matriz1[fila][columna] = x;
+                                    System.out.print(matriz1[fila][columna] + " ");
+                                }
+                            }
+                            System.out.println();
+                        }
+                
+                        System.out.println();
+                        System.out.println("MATRIZ 2");
+                
+                        for(int fila = 0; fila <= 3; fila++){
+                            for(int columna = 0; columna <=4; columna++){
+                
+                                if(fila == 0){
+                                    x = Integer.toString(columna + 1);
+                                    matriz1[fila][columna] = "0" + x;
+                                    System.out.print(matriz1[fila][columna] + " ");
+                                }else if(fila == 1 && columna == 0){
+                                    x = Integer.toString(columna + 10);
+                                    matriz1[fila][columna] = x;
+                                    System.out.print(matriz1[fila][columna] + " ");
+                                }else if(fila == 1){
+                                    x = Integer.toString(10- columna);
+                                    matriz1[fila][columna] = "0" + x;
+                                    System.out.print(matriz1[fila][columna] + " ");
+                                }else if(fila == 2){
+                                    x = Integer.toString(columna + 11);
+                                    matriz1[fila][columna] = x;
+                                    System.out.print(matriz1[fila][columna] + " ");
+                                }else {
+                                    x = Integer.toString(20- columna);
+                                    matriz1[fila][columna] = x;
+                                    System.out.print(matriz1[fila][columna] + " ");
+                                }
+                            }
+                            System.out.println();
+                        }
+                        System.exit(0);
+                    }
+                }
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 5</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller4/Punto5.java">Github</a>
+            <p>
+                Se debe de imprimir el siguiente cuadro <br>
+                <img src="images/tabla.png"> <br>
+                El usuario deberá insertar la fila y columna de la cual desea ver el resultado, el resultado de cada celda debe estar previamente calculado en una matriz bidimensional la cual cada resultado obedecerá a la fila y columna insertada por el usuario.
+            </p>
+            <pre>
+            <code>
+                package Taller4;
+                import java.util.Scanner;
+                
+                public class Punto5 {
+                    public static String x ,z;
+                    public static Integer[][] matriz = new Integer[10][10];
+                    public static Integer leerFila, leerColumna;
+                    public static Boolean continuar = true;
+                    private static final Scanner input = new Scanner(System.in);
+                
+                
+                    public static void main(String[] args) {
+                        String[] letras = {" ", " ", "F", "I", "L", "A", "S", " ", " "," "};
+                
+                        System.out.println("                                              COLUMNAS ");
+                        System.out.println("          [1]      [2]      [3]      [4]      [5]      [6]      [7]      [8]      [9]      [10]");
+                
+                        for(int fila =0; fila <= 9; fila++){
+                
+                            if(fila == 9){
+                                System.out.print(letras[fila] +"  [" + (fila+1) + "]  "   );
+                            }else{
+                                System.out.print(letras[fila] +"  [" + (fila+1) + "]   "   );
+                            }
+                
+                            for(int columna = 0; columna <= 9 ; columna++){
+                                x = Integer.toString(fila + 1);
+                                z = Integer.toString(columna + 1);
+                                matriz[fila][columna] = (fila+1) * (columna+1);
+                
+                                if(fila == 9){
+                                    System.out.print(z + " X " + x + "   ");
+                                }else{
+                                    System.out.print(z + " X " + x + "    ");
+                                }
+                            }
+                            System.out.println();
+                        }
+                        System.out.println();
+                
+                        do {
+                            System.out.print("ESCRIBE LA FILA: ");
+                            leerFila = input.nextInt();
+                            System.out.print("ESCRIBE LA COLUMNA: ");
+                            leerColumna = input.nextInt();
+                
+                            if(leerFila <= 10 && leerColumna <=10 && leerFila > 0 && leerColumna > 0){
+                                System.out.println("RESULTADO= " + matriz[leerFila-1][leerColumna-1]);
+                            }else {
+                                System.out.println("RANDO NO VALIDO");
+                            }
+                        }while(continuar);
+                        input.close();
+                        System.exit(0);
+                    }
+                }            
+            </code>
+        </pre>
+        </section>
+
+    </div>
+</body>
+</html>

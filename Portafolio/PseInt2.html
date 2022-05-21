@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/talleresPseint.css" />
+    <title>Taller 2</title>
+</head>
+
+<body>
+    <nav>
+        <a href="PseInt1.html">TALLER 1</a>
+        <a href="PseInt3.html">TALLER 3</a>
+        <a href="PseInt4.html">TALLER 4</a>
+        <a href="PseInt5.html">TALLER 5</a>
+        <a href="portafolio.html">VOLVER A INICIO</a>
+    </nav>
+
+    <div class="contenedor">
+        <section>
+            <p><b>Punto 1</b></p>
+            <p>
+                Realizar un programa en el cual se solicite la edad de una persona. Si
+                la persona es mayor o igual a 18 años, deberá mostrar en pantalla:
+                Usted es mayor de edad.
+            </p>
+            <pre>
+            <code>
+            Proceso Punto1
+            Definir edad Como Entero;
+                
+            Escribir "Digite su edad";
+            Leer edad;
+                
+            Si edad >= 18 Entonces
+            Escribir "Eres mayor de edad";
+            SiNo
+            Escribir "No eres mayor de edad";                    
+            FinSi
+            FinProceso
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 2</b></p>
+            <p>
+                Realizar un programa en el cual se solicite la edad de una persona. Si
+                la persona es menor a 18 años, deberá mostrar en pantalla: Usted aún
+                es un niño(a).
+            </p>
+            <pre>
+        <code>
+            Proceso Punto2
+            Definir edad Como Entero;
+            
+            Escribir "Digite su edad";
+            Leer edad;
+            
+            Si edad < 18 Entonces
+                Escribir "Usted es aun un niño(a)";
+            SiNo
+                Escribir "Eres un adulto";
+                
+            FinSi
+            
+            FinProceso         
+
+        </code>
+    </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 3</b></p>
+            <p>
+                Realizar un programa en el cual se solicite el nombre, apellidos y
+                edad de la persona. Si la persona es mayor o igual a 18 años, entonce
+                se deberá imprimir en pantalla [Nombre completo] usted es mayor de
+                edad, por lo tanto puede entrar a la fiesta. Si la edad de la persona
+                es menor que 18 años, entonces, deberá imprimirse el siguiente
+                mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no
+                puede entrar a la fiesta, por favor devuélvase a su casa.
+            </p>
+            <pre>
+    <code>
+            Proceso Punto3
+            Definir nombre Como Caracter;
+            Definir apellidos Como Caracter;
+            Definir edad Como Entero;
+        
+            Escribir "Digite su nombre";
+            Leer nombre;
+            Escribir "Digite sus apelldos";
+            Leer apellidos;
+            Escribir "Digite su edad";
+            Leer edad;
+        
+            Si edad >= 18 Entonces
+            Escribir nombre ," " , apellidos , " Usted es mayor de edad, por lo tanto puede entrar al la fiesta, bienvenido(a)";
+            SiNo
+            Escribir nombre," ",apellidos, " usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuelvase a su casa ";
+            FinSi
+        
+            FinProceso
+    </code>
+    </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 4</b></p>
+            <p>
+                La video tienda que presta sus servicios de alquiler de películas a
+                los usuarios del barrio el Porvenir, requiere de una aplicación que
+                permita registrar el alquiler de las películas que adquieren sus
+                usuarios. Para cada usuario se debe permitir la opción de alquilar
+                película, consultar películas disponibles y recibir película en la
+                video tienda con la opción de realizar anotaciones sobre estas si se
+                llegan a presentar daños u otra novedad sobre la película.
+            </p>
+            <pre>
+        <code>
+            Proceso Punto4
+            Definir usuario Como Caracter;
+            Definir anotacion Como Logico;
+            Definir anotacion1 Como Caracter;
+            Definir opcion Como Entero;
+            Definir eleccion Como Entero;
+            
+            
+            Escribir "Bienvenido a nuestra tienta de alquiler de peliculas";
+            Escribir "Ingrese el nombre de usuario registrado";
+            Leer usuario;
+            
+            Escribir "Eliga una de las opcines a realizar";
+            Escribir "1. Consultar peliculas disponibles";
+            Escribir "2. Alquilar Pelicula";
+            Escribir  "3. Entregar pelicula";
+            Leer opcion;
+            
+            Limpiar Pantalla;
+            
+            Segun opcion Hacer
+                    1:
+                        Escribir "Tenemos las siguientes peliculas disponibles";
+                        Escribir "1. 300 el renacer de un imperio";
+                        Escribir "2. La liga de la justicia";
+                        Escribir "3. Piratas del caribe";
+                        
+                        
+                    2:
+                        Escribir "Tenemos las siguientes peliculas disponibles";
+                        Escribir "1. 300 el renacer de un imperio";
+                        Escribir "2. La liga de la justicia";
+                        Escribir "3. Piratas del caribe";
+                        Escribir "CUAL PELICULA DESEAS ALQUILAR";
+                        leer eleccion;
+                        
+                        Segun eleccion Hacer
+                                1:
+                                    Escribir usuario ," Has alquilado la pelicula: 300 el renacer de un imperio";
+                                2:
+                                    Escribir usuario ," Has alquilado la pelicula: La liga de la justicia";
+                                3:
+                                    Escribir usuario ," Has alquilado la pelicula: Piratas del caribe";
+                        FinSegun
+                        
+                    3:
+                        Escribir "¿Que pelicula deseas entregar?";
+                        Escribir "1. 300 el renacer de un imperio";
+                        Escribir "2. La liga de la justicia";
+                        Escribir "3. Piratas del caribe";
+                        Leer eleccion;
+                        Escribir "¿Tienes alguna anotacion para dejar sobre la pelicula? si:Verdadero , No: Falso";
+                        Leer anotacion;
+                        Si anotacion = Verdadero Entonces
+                            Escribir "Que anotacion tienes sobre la pelicula?";
+                            Leer anotacion1;
+                            Escribir "Hemos almacenado tu comentario";
+                        FinSi
+                        
+                        Segun eleccion Hacer
+                            1:
+                                Escribir usuario ," Has entregado la pelicula: 300 el renacer de un imperio";
+                            2:
+                                Escribir usuario ," Has entregado la pelicula: La liga de la justicia";
+                            3:
+                                Escribir usuario ," Has entregado la pelicula: Piratas del caribe";
+                        FinSegun
+                        
+                        
+                    De Otro Modo:
+                        Escribir "No es valida tu eleccion";
+            FinSegun
+            
+            FinProceso
+        </code>
+        </pre>
+        </section>
+
+        <section>
+            <h1><b>Punto 5</b></h1>
+            <p>
+                La Droguería Mi Salud presta sus servicios en la localidad de Suba y
+                requiere una aplicación para poder facturar los productos que vende a
+                sus clientes y para ello, los productos tienen unas características
+                que deben indicársele al cliente para que pueda escoger el producto a
+                comprar. Para cada cliente, se tienen las opciones de compra de
+                producto, consulta de precios por producto y devoluciones en caso de
+                que se presenten.
+            </p>
+            <pre>
+            <code>
+            Proceso Punto5
+            Definir producto1 Como Caracter;
+            Definir producto2 Como Caracter;
+            Definir producto3 Como Caracter;
+            Definir opcion Como Entero;
+            Definir eleccion Como Entero;
+            Definir devolucion Como Caracter;
+            Definir comentario Como Caracter;
+            Definir comprar Como Logico;
+            Definir comprar1 Como Entero;
+                
+            producto1 <- "Acetaminofen";
+            producto2 <- "Dolex Forte";
+            producto3 <- "Loratadina";
+                
+                
+            Escribir "Bienvenido(a) a la Drogueria Mi Salud";
+            Escribir "Escoge que proceso deseas realizar con nosotros";
+            Escribir "1. Para consultar los productos";
+            Escribir "2. Para Devoluciones";
+            Leer opcion;
+                
+            Limpiar Pantalla;
+                
+            Segun opcion Hacer
+                1:
+                    Escribir "Contamos con los siguientes medicamentos: ";
+                    Escribir "1. ",producto1, " Caja de 14 tabletas";
+                    Escribir "2. ",producto2,  " Caja de 25 tabletas";
+                    Escribir "3. ", producto3, " Caja de 8 tabletas";
+                    Escribir "¿A cual productos deseas consultar su precio?";
+                    Leer eleccion;
+                        
+                    Limpiar Pantalla;
+                        
+                    Segun eleccion Hacer
+                        1:
+                            Escribir "Precio: 5000 $ de la caja de ",producto1 ;
+                        2:
+                            Escribir "Precio: 7500 $ de la caja de ", producto2;
+                        3:
+                            Escribir "Precio: 3500 $ de la caja de ",producto3;
+                    FinSegun
+                        
+                    Esperar 3 segundos;
+                        
+                    Limpiar Pantalla;
+                        
+                    Escribir "¿Desea realizar una compra? Si: Verdadero , No: Falso";
+                    Leer comprar;
+                        
+                    Limpiar Pantalla;			
+                        
+                    Si comprar = Verdadero Entonces
+                        Escribir "¿Que medicamento desea comprar?";
+                        Escribir "1. ",producto1, " Caja de 14 tabletas";
+                        Escribir "2. ",producto2,  " Caja de 25 tabletas";
+                        Escribir "3. ", producto3, " Caja de 8 tabletas";
+                        Leer comprar1;
+                            
+                        Limpiar Pantalla;
+                            
+                        Segun comprar1 Hacer
+                            1:
+                                Escribir "Has comprado: ",producto1, " Caja de 14 tabletas por 5000$";
+                            2:
+                                Escribir "Has comprado: ",producto2, " Caja de 25 tabletas por 7500$";
+                            3:
+                                Escribir "Has comprado: ",producto3, " Caja de 8 tabletas por 3500$";
+                        FinSegun
+                    SiNo
+                        Escribir "Gracias por visitarnos";
+                    FinSi
+                2:
+                    Escribir "¿Que deseas devolver?";
+                    Leer devolucion;
+                    Escribir "¿Por que lo devueles?";
+                    Leer comentario;
+                    Escribir "Has devuelto " ,devolucion, " Por el motivo: ", comentario;
+                                    
+            FinSegun
+                
+            FinProceso
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/16KzSQGCN18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>           
+            </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 6</b></p>
+            <p>
+                El taller de motos "El Maquinista" recibe motocicletas de alto
+                cilindraje para realizar las respectivas revisiones y requiere una
+                aplicación que le permita registrar los servicios generados a sus
+                clientes. Para cada motocicleta se debe tener registro del ingreso al
+                taller y las observaciones por parte del cliente. También debe existir
+                registro de salida del taller con las novedades y otra de arreglos
+                hechos por el mecánico en caso de que se requiera inventariar cambios
+                repuestos en la motocicleta al entregarla.
+            </p>
+            <pre>
+                <code>
+                    Proceso punto6
+	
+                    Definir moto1 Como Caracter;
+                    Definir moto2 Como Caracter;
+                    Definir moto3 Como Caracter;
+                    Definir observacion1 Como Caracter;
+                    Definir observacion2 Como Caracter;
+                    Definir observacion3 Como Caracter;
+                    Definir novedad1 Como Caracter;
+                    Definir novedad2 Como Caracter;
+                    Definir novedad3 Como Caracter;
+                    Definir eleccion Como Entero;
+                    Definir retirar Como Logico;
+                        
+                    moto1 <- "VICTORY";
+                    moto2 <- "YAMAHA";
+                    moto3 <- "BOXER";
+                    
+                    observacion1 <- "REEMPLAZO DE CAJA DE CAMBIOS";
+                    observacion2 <- "CAMBIO DEL LUCES";
+                    observacion3 <- "REVISION TECNICO MECANICA";
+                    
+                    novedad1 <- "PENDIENTE DEL REEMPLAZO DE LA CAJA DE CAMBIOS";
+                    novedad2 <- "PENDIENTE DE CAMBIO DE LUCES";
+                    novedad3 <- "PENDIENTE DE REVISION TECNICO MECANICA";
+                    
+                    Escribir "Bienvenido a El taller de motos EL MAQUINISTA";
+                    Esperar 3 Segundos;
+                    Limpiar Pantalla;
+                    Escribir "1. CONSULTAR EL ESTADO DE SU MOTOCICLETA";
+                    Escribir "2. RETIRAR SU MOTOCICLETA DEL TALLER ";
+                    Leer eleccion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun eleccion Hacer
+                        1:
+                            Escribir "¿Cual es tu motocicleta?";
+                            Escribir "1. ",moto1;
+                            Escribir "2. ",moto2;
+                            Escribir "3. ",moto3;
+                            Leer eleccion;
+                            
+                            Segun eleccion hacer
+                                1:
+                                    Escribir "Tu moto seleccionada es: ", moto1;	
+                                    Esperar 3 Segundos;
+                                    Limpiar Pantalla;
+                                    Escribir "Se le realizaron las siguientes reparaciones: ";
+                                    Escribir observacion1 , " y " , observacion3;
+                                    Esperar 3 Segundos;
+                                    Escribir "¿Desea retirar La motocicleta? Si: Verdadero o No: Falso";
+                                    Leer retirar;
+                                    Limpiar Pantalla;
+                                    Si retirar = Verdadero Entonces
+                                        
+                                        Escribir "Tu moto: ", moto1 , " ha sido retirada con las reparaciones de: ", observacion1, " y ", observacion3;
+                                    SiNo
+                                        Escribir "Guardaremos su moto hasta que decidas retirarla , gracias por su visita";
+                                    FinSi
+                                2:
+                                    Escribir "Tu moto seleccionada es: ", moto2;	
+                                    Esperar 3 Segundos;
+                                    Limpiar Pantalla;
+                                    Escribir "Se le realizaron las siguientes reparaciones: ";
+                                    Escribir observacion2 , " y " , observacion1;
+                                    Esperar 3 Segundos;
+                                    Escribir "¿Desea retirar La motocicleta? Si: Verdadero o No: Falso";
+                                    Leer retirar;
+                                    Limpiar Pantalla;
+                                    Si retirar = Verdadero Entonces
+                                        
+                                        Escribir "Tu moto: ", moto2 , " ha sido retirada con las reparaciones de: ", observacion2, " y ", observacion1;
+                                    SiNo
+                                        Escribir "Guardaremos su moto hasta que decidas retirarla , gracias por su visita";
+                                    FinSi
+                                3:
+                                    Escribir "Tu moto seleccionada es: ", moto3;	
+                                    Esperar 3 Segundos;
+                                    Limpiar Pantalla;
+                                    Escribir "Se le realizaron las siguientes reparaciones: ";
+                                    Escribir observacion2 , " y " , observacion3;
+                                    Esperar 3 Segundos;
+                                    Escribir "¿Desea retirar La motocicleta? Si: Verdadero o No: Falso";
+                                    Leer retirar;
+                                    Limpiar Pantalla;
+                                    Si retirar = Verdadero Entonces
+                                        
+                                        Escribir "Tu moto: ", moto3 , " ha sido retirada con las reparaciones de: ", observacion2, " y ", observacion3;
+                                    SiNo
+                                        Escribir "Guardaremos su moto hasta que decidas retirarla , gracias por su visita";
+                                    FinSi
+                                    
+                            FinSegun
+                        2:
+                            Escribir "¿Cual es tu motocicleta?";
+                            Escribir "1. ",moto1;
+                            Escribir "2. ",moto2;
+                            Escribir "3. ",moto3;
+                            Leer eleccion;
+                            Esperar 3 Segundos;
+                            Limpiar Pantalla;
+                            
+                            Segun eleccion Hacer
+                                1:
+                                    Escribir moto1, " esta pendiente de realizar las siguientes actividades: ";
+                                    Escribir novedad1, " y ", novedad3;
+                                    Escribir "¿Esta seguro que quiere retirar su moto? si: verdadero o no: falso" ;
+                                    leer retirar;
+                                    Limpiar Pantalla;
+                                    si retirar = Verdadero Entonces
+                                        Escribir moto1 ," retirada del taller";
+                                    SiNo
+                                        Escribir "Continuaremos con las reparaciones a su moto , gracias por su visita";
+                                    FinSi
+                                2:
+                                    Escribir moto2, " esta pendiente de realizar las siguientes actividades: ";
+                                    Escribir novedad3, " y ", novedad2;
+                                    Escribir "¿Esta seguro que quiere retirar su moto? si: verdadero o no: falso" ;
+                                    leer retirar;
+                                    Limpiar Pantalla;
+                                    si retirar = Verdadero Entonces
+                                        Escribir moto2 ," retirada del taller";
+                                    SiNo
+                                        Escribir "Continuaremos con las reparaciones a su moto , gracias por su visita";
+                                    FinSi
+                                3:
+                                    Escribir moto3, " esta pendiente de realizar las siguientes actividades: ";
+                                    Escribir novedad2, " y ", novedad1;
+                                    Escribir "¿Esta seguro que quiere retirar su moto? si: verdadero o no: falso" ;
+                                    leer retirar;
+                                    Limpiar Pantalla;
+                                    si retirar = Verdadero Entonces
+                                        Escribir moto3 ," retirada del taller";
+                                    SiNo
+                                        Escribir "Continuaremos con las reparaciones a su moto , gracias por su visita";
+                                    FinSi
+                            FinSegun                            
+                        FinSegun
+                    FinProceso
+                </code>
+                </pre>
+        </section>
+        <section>
+            <p><b>Punto 7</b></p>
+            <p>
+                La Secretaría de Salud Municipal requiere de una aplicación que le
+                permita calcular el IMC (Índice de masa corporal) y requiere los datos
+                peso en kilogramos y estatura en metros Para cada persona encuestada
+                adicional a los datos suministrados, debe mostrar el resultado para
+                cada uno y establecer en qué rango se encuentra (bajo peso, normal,
+                sobrepeso y obeso).
+            </p>
+            <pre>
+            <code>
+                Proceso punto7
+	
+                Definir persona1 Como Caracter;
+                Definir peso1 Como Real;
+                Definir estatura1 Como Real;
+                Definir persona2 Como Caracter;
+                Definir peso2 Como Real;
+                Definir estatura2 Como Real;
+                Definir contador Como Entero;
+                Definir imc Como Real;
+                Definir imc2 Como Real;
+                
+                Escribir "Bienvenido al Sistema de la Secretaria de Salud Municipal";
+                Escribir  "¿Cuantas personas van a realizar su pesaje?, MAXIMO = 2";
+                leer contador;
+                
+                Limpiar Pantalla;
+                
+                Si contador >=1 Y contador <= 2 Entonces
+                    
+                    Segun contador Hacer
+                        1:
+                            Escribir "Digite el nombre de la persona: ";
+                            Leer persona1;
+                            Limpiar Pantalla;
+                            
+                            Escribir  "Digite su estatura en Metros:";
+                            Leer estatura1;
+                            Limpiar Pantalla;
+                            
+                            Escribir  "Digite su peso corporal en Kg";
+                            Leer peso1;
+                            Limpiar Pantalla;
+                            
+                            imc <- peso1/(estatura1)^2;
+                            
+                            Escribir persona1, " con una peso de: ", peso1, "kg y ", estatura1, "M de estatura";
+                            Escribir "Tiene un IMC de: ", imc;
+                            
+                            Si imc < 18.5 Entonces
+                                Escribir "BAJO PESO , Peso inferior al normal";
+                                
+                            FinSi
+                            Si imc>=18.5 Y imc < 25 Entonces
+                                Escribir "tu IMC es Normal";
+                                
+                            FinSi
+                            Si imc>=25 Y imc < 30 Entonces
+                                Escribir "Peso superior al normal, SOBREPESO";
+                                
+                            FinSi
+                            Si imc>=30 Entonces
+                                Escribir "Peso muy superior, Obesidad";
+                                
+                            FinSi
+                            
+                        2:
+                            Escribir "Digite el nombre de la primera persona: ";
+                            Leer persona1;
+                            Limpiar Pantalla;
+                            
+                            Escribir  "Digite su estatura en Metros:";
+                            Leer estatura1;
+                            Limpiar Pantalla;
+                            
+                            Escribir  "Digite su peso corporal en Kg";
+                            Leer peso1;
+                            Limpiar Pantalla;
+                            
+                            Escribir "Digite el nombre de la segunda persona: ";
+                            Leer persona2;
+                            Limpiar Pantalla;
+                            
+                            Escribir  "Digite su estatura en Metros:";
+                            Leer estatura2;
+                            Limpiar Pantalla;
+                            
+                            Escribir  "Digite su peso corporal en Kg";
+                            Leer peso2;
+                            Limpiar Pantalla;
+                            
+                            imc <- peso1/(estatura1)^2;
+                            imc2 <- peso2/(estatura2)^2;
+                            
+                            Escribir persona1, " con una peso de: ", peso1, "kg y ", estatura1, "M de estatura";
+                            Escribir "Tiene un IMC de: ", imc;
+                            
+                            Si imc < 18.5 Entonces
+                                Escribir "BAJO PESO , Peso inferior al normal";
+                                
+                            FinSi
+                            Si imc>=18.5 Y imc < 25 Entonces
+                                Escribir "tu IMC es Normal";
+                                
+                            FinSi
+                            Si imc>=25 Y imc < 30 Entonces
+                                Escribir "Peso superior al normal, SOBREPESO";
+                                
+                            FinSi
+                            Si imc>=30 Entonces
+                                Escribir "Peso muy superior, Obesidad";
+                                
+                            FinSi
+                            
+                            Escribir persona2, " con una peso de: ", peso2, "kg y ", estatura2, "M de estatura";
+                            Escribir "Tiene un IMC de: ", imc2;
+                            
+                            Si imc2 < 18.5 Entonces
+                                Escribir "BAJO PESO , Peso inferior al normal";
+                                
+                            FinSi
+                            Si imc2>=18.5 Y imc2 < 25 Entonces
+                                Escribir "tu IMC es Normal";
+                                
+                            FinSi
+                            Si imc2>=25 Y imc2 < 30 Entonces
+                                Escribir "Peso superior al normal, SOBREPESO";
+                                
+                            FinSi
+                            Si imc2>=30 Entonces
+                                Escribir "Peso muy superior, Obesidad";
+                                
+                            FinSi
+                            
+                    FinSegun
+                SiNo
+                    Escribir "CANTIDAD NO VALDIDA";
+                FinSi            
+            FinProceso
+            </code>
+        </pre>
+        </section>
+        <section>
+            <p><b>Punto 8</b></p>
+            <p>
+                El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere
+                una aplicación que le permita registrar los pedidos de los clientes en
+                cuanto a las tortas que realiza. Cada torta tiene unas características
+                propias como sabor, cantidad (porciones) y decoraciones). Se requiere
+                que la aplicación permita registrar los pedidos, las tortas
+                disponibles y las ventas que se registren diariamente.
+            </p>
+            <pre>
+            <code>
+                Proceso punto8
+                Definir torta1, sabor1 Como Caracter;
+                Definir torta2, sabor2 Como Caracter;
+                Definir torta3, sabor3 Como Caracter;
+                Definir porciones1 , porciones2 , porciones3 Como Entero;
+                Definir ventas1 , ventas2 , ventas3 Como Entero;
+                Definir operacion Como Entero;
+                
+                ventas1 <- 15;
+                ventas2 <- 9;
+                ventas3 <- 35;
+                
+                torta1 <- "Mousse";
+                torta2 <- "Fresas con crema";
+                torta3 <- "Cheesecake de Nutella";
+                
+                sabor1 <- "Chocolate";
+                sabor2 <- "Vainilla";
+                sabor3 <- "Fresa";
+                
+                porciones1 <- 8;
+                porciones2 <- 12;
+                porciones3 <- 6;
+                
+                
+                Escribir "Bienvenido a la Pasteleria";
+                Esperar 3 Segundos;
+                Limpiar Pantalla;
+                Escribir "¿En que le podemos servir?";
+                Escribir "1. Consultar Tortas disponibles";
+                Escribir "2. Comprar Torta";
+                Escribir "3. Consultar Registro de ventas";
+                Leer operacion;
+                
+                Limpiar Pantalla;
+                
+                Si operacion >=1 Y operacion <= 3 Entonces
+                    
+                    Segun operacion Hacer
+                        1:
+                            Escribir "Tenemos las siguientes tortas disponibles: ";
+                            Escribir torta1, ",", torta2 ,",",torta3;
+                            Escribir  "Presione Enter para continuar";
+                            Esperar Tecla;
+                            Limpiar Pantalla;
+                            Escribir "¿Desea consultar las caracteristicas de alguna torta?";
+                            Escribir "1. ", torta1;
+                            Escribir "2. ", torta2;
+                            Escribir "3. ", torta3;
+                            Leer operacion;
+                            
+                            Limpiar Pantalla;
+                            
+                            Si operacion >=1 Y operacion <= 3 Entonces
+                                
+                                Segun operacion Hacer
+                                    1:
+                                        Escribir torta1 , " Tiene las siguientes caracteristicas: ";
+                                        Escribir "Sabor de: ", sabor1;
+                                        Escribir "Porciones: ", porciones1;
+                                    2:
+                                        Escribir torta2 , " Tiene las siguientes caracteristicas: ";
+                                        Escribir "Sabor de: ", sabor2;
+                                        Escribir "Porciones: ", porciones2;
+                                    3:
+                                        Escribir torta3 , " Tiene las siguientes caracteristicas: ";
+                                        Escribir "Sabor de: ", sabor3;
+                                        Escribir "Porciones: ", porciones3;
+                                FinSegun
+                            SiNo
+                                Escribir "OPCION NO VALIDA";
+                            FinSi
+                            
+                        2:
+                            Escribir "¿Cual torta desea comprar?";
+                            Escribir "1. ", torta1;
+                            Escribir "2. ", torta2;
+                            Escribir "3. ", torta3;
+                            Leer operacion;
+                            Escribir "Presione ENTER para confirmar";
+                            Esperar Tecla;
+                            Limpiar Pantalla;
+                            
+                            Si operacion >=1 Y operacion <= 3 Entonces
+                                
+                                Segun operacion Hacer
+                                    1:
+                                        Escribir torta1 , " Comprada";
+                                        Escribir "Gracias Por su compra";
+                                    2:
+                                        Escribir torta2 , " Comprada";
+                                        Escribir "Gracias Por su compra";
+                                    3:
+                                        Escribir torta3 , " Comprada";
+                                        Escribir "Gracias Por su compra";
+                                FinSegun
+                            SiNo
+                                Escribir "Operacion no valida";
+                            FinSi
+                                        
+                        3:
+                            Escribir "¿Cual torta desea consultar las ventas?";
+                            Escribir "1. ", torta1;
+                            Escribir "2. ", torta2;
+                            Escribir "3. ", torta3;
+                            Leer operacion;
+                            Limpiar Pantalla;
+                            
+                            Si operacion >=1 Y operacion <= 3 Entonces
+                                Segun operacion Hacer
+                                    1:
+                                        Escribir "1. ", torta1, " Tiene un total de ventas de: ",ventas1, " Tortas por semana";
+                                    2:
+                                        Escribir "2. ", torta2, " Tiene un total de ventas de: ",ventas2, " Tortas por semana";
+                                    3:
+                                        Escribir "3. ", torta3, " Tiene un total de ventas de: ",ventas3, " Tortas por semana";
+                                FinSegun
+                            SiNo
+                                Escribir "Operacion no valida";
+                            FinSi
+                    FinSegun
+                SiNo
+                    Escribir "OPERACION NO ES POSIBLE, VALOR ERRONEO";
+                FinSi
+                
+            FinProceso
+            </code>
+        </pre>
+        </section>
+        <section>
+            <p><b>Punto 9</b></p>
+            <p>
+                El profesor de geometría está explicando a sus estudiantes las
+                fórmulas para calcular el área de diferentes figuras geométricas, para
+                ello requiere una aplicación que le facilite el ejercicio
+                solicitándole los valores al estudiante. La aplicación debe permitir
+                que el estudiante seleccione si desea calcular el área de un
+                rectángulo, triángulo o trapecio. No olvide solicitar los datos
+                necesarios para realizar cada cálculo y mostrar su respectivo
+                resultado.
+            </p>
+            <pre>
+            <code>
+                Proceso punto9
+                Definir baseCorta , baseLarga , alturah , area Como Real;
+                Definir tipoTriangulo Como entero;
+                
+                
+                Escribir "Define el tipo de triangulo para calcular su Area: ";
+                Escribir "1. Rectangulo";
+                Escribir "2. Triangulo";
+                Escribir "3. Trapecio";
+                Leer tipoTriangulo;
+                Limpiar Pantalla;
+                
+                Si tipoTriangulo >= 1 Y tipoTriangulo <= 3 Entonces
+                    Segun tipoTriangulo Hacer
+                        1:
+                            Escribir "Area de un Rectangulo";
+                            Escribir "Digite su base: ";
+                            Leer baseCorta;
+                            Escribir "Digite la Altura (h): ";
+                            Leer alturah;
+                            Limpiar Pantalla;
+                            Escribir "Rectangulo con base: ", baseCorta , " y altura: ", alturah;
+                            area <- baseCorta * alturah;
+                            Escribir "Su area es: ", area;
+                        2:
+                            Escribir "Area de un Triangulo";
+                            Escribir "Digite su base: ";
+                            Leer baseCorta;
+                            Escribir "Digite la Altura (h): ";
+                            Leer alturah;
+                            Limpiar Pantalla;
+                            Escribir "Triangulo con base: ", baseCorta , " y altura: ", alturah;
+                            area <- (baseCorta * alturah)/2;
+                            Escribir "Su area es: ", area;
+                        3:
+                            Escribir "Area de un Trapecio";
+                            Escribir "Digite su base mas corta: ";
+                            Leer baseCorta;
+                            Escribir "Digite su base mas larga: ";
+                            Leer baseLarga;
+                            Escribir "Digite la Altura (h): ";
+                            Leer alturah;
+                            Limpiar Pantalla;
+                            Escribir "Trapecio con base: ", baseCorta , " y altura: ", alturah;
+                            area <- ((baseLarga+baseCorta)*alturah)/2;
+                            Escribir "Su area es: ", area;
+                    FinSegun
+                FinSi
+                
+            FinProceso
+            </code>
+        </pre>
+        </section>
+        <section>
+            <p><b>Punto 10</b></p>
+            <p>
+                El banco "Su banco fiel" es un banco que inicia sus actividades
+                financieras y necesita una aplicación para llevar las cuentas de sus
+                usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos
+                titular y cantidad. Para cada cliente las cuentas permitirán realizar
+                ingresos, retiros o consultas de valor. En los ingresos no se pueden
+                insertar valores negativos y para los retiros el valor no puede ser
+                mayor al valor que tiene en la cuenta.
+            </p>
+            <pre>
+            <code>
+                Proceso punto10
+                Definir titular1 , titular2, usuario Como Caracter;
+                Definir saldo1 , saldo2 , retiro , ingreso Como Real;
+                Definir operacion Como Entero;
+                
+                titular1 <- "juan";
+                saldo1 <- 11000;
+                
+                titular2 <- "pablo";
+                saldo2 <- 21000;
+                
+                Escribir "Bienvenido a su Banco fiel";
+                Esperar 3 Segundos;
+                Limpiar Pantalla;
+                Escribir "¿Que operacion desea realizar?";
+                Escribir  "1. Ingresar monto";
+                Escribir  "2. Retirar monto";
+                Escribir  "3. Consultar saldo";
+                leer operacion;
+                Limpiar Pantalla;
+                
+                Si operacion >= 1 Y operacion <= 3 Entonces
+                    
+                    Segun operacion Hacer
+                        1:
+                            Escribir "Cual es tu usuario";
+                            Leer usuario;
+                            Limpiar Pantalla;
+                            
+                            Si usuario = titular1 O usuario = titular2 Entonces
+                                
+                                Limpiar Pantalla;
+                                
+                                Si usuario = titular1 Entonces
+                                    Escribir "DIGITE EL MONTO A CONSIGNAR: ";
+                                    Leer ingreso;
+                                    
+                                    Si ingreso > 0 Entonces
+                                        saldo1 <- saldo1 + ingreso;
+                                        Escribir "Has consignado: ", ingreso , ", Tu Saldo actual es de: ", saldo1;
+                                    Sino 
+                                        Escribir "MONTO NO VALIDO";
+                                    FinSi
+                                SiNo
+                                    Escribir "DIGITE EL MONTO A CONSIGNAR: ";
+                                    Leer ingreso;
+                                    
+                                    Si ingreso > 0 Entonces
+                                        saldo2 <- saldo2 + ingreso;
+                                        Escribir "Has consignado: ", ingreso , ", Tu Saldo actual es de: ", saldo2;
+                                    Sino 
+                                        Escribir "MONTO NO VALIDO";
+                                    FinSi
+                                FinSi
+                            SiNo
+                                Escribir "USUARIO NO VALIDO";
+                            FinSi
+                                        
+                        2:
+                            Escribir "Cual es tu usuario";
+                            Leer usuario;
+                            Limpiar Pantalla;
+                            
+                            Si usuario = titular1 O usuario = titular2 Entonces
+                                
+                                Si usuario = titular1 Entonces
+                                    Escribir "DIGITE EL MONTO A RETIRAR: ";
+                                    Leer retiro;
+                                    Si retiro > 0 Y retiro <= saldo1 Entonces
+                                        saldo1 <- saldo1 - retiro;
+                                        Escribir "HAS RETIRADO: ", retiro , ", Tu saldo actual es de: ", saldo1;
+                                    SiNo
+                                        Escribir "MONTO A RETIRAR NO VALIDO";
+                                    FinSi
+                                    
+                                SiNo
+                                    Escribir "DIGITE EL MONTO A RETIRAR: ";
+                                    Leer retiro;
+                                    Si retiro > 0 Y retiro <= saldo2 Entonces
+                                        saldo2 <- saldo2 - retiro;
+                                        Escribir "HAS RETIRADO: ", retiro , ", Tu saldo actual es de: ", saldo2;
+                                    SiNo
+                                        Escribir "MONTO A RETIRAR NO VALIDO";
+                                    FinSi
+                                FinSi
+                            SiNo
+                                Escribir "USUARIO NO VALIDO";
+                            FinSi
+                        3:
+                            Escribir "Cual es tu usuario";
+                            Leer usuario;
+                            Limpiar Pantalla;
+                            
+                            Si usuario = titular1 O usuario = titular2 Entonces
+                                Si usuario = titular1 Entonces
+                                    Escribir "TU SALDO ACTUAL ES DE: ", saldo1;
+                                SiNo
+                                    Escribir "TU SALDO ACTUAL ES DE: ", saldo2;
+                                FinSi
+                            SiNo
+                                Escribir "USUARIO NO VALIDO";
+                            FinSi
+                            
+                    FinSegun
+                    
+                FinSi
+                
+            FinProceso	
+            </code>
+        </pre>
+        </section>
+    </div>
+</body>
+
+</html>

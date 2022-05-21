@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/talleresPseint.css">
+    <title>Taller 4</title>
+</head>
+<body>
+    <nav>
+        <a href="PseInt1.html">TALLER 1</a>
+        <a href="PseInt2.html">TALLER 2</a>
+        <a href="PseInt3.html">TALLER 3</a>
+        <a href="PseInt5.html">TALLER 5</a>
+        <a href="portafolio.html">VOLVER A INICIO</a>
+    </nav>
+
+    <div class="contenedor">
+        <section>
+            <p><b>Punto 1</b></p>
+            <p>
+                Crear un vector de tipo Entero con 5 posiciones, llenarlo con información solicitada al usuario. Después de recoger toda la información, se requiere imprimir el índice de cada posición en el arreglo con su valor de la siguiente manera: <br>
+                [0] = 55 <br>
+                [1] = 99  <br>
+                [2] = 11 <br>
+                [3] = 56 <br>
+                [4] = 69
+            </p>
+            <pre>
+            <code>
+                Proceso punto1
+                Definir vector,indice Como entero;
+                Dimension vector[5];
+                
+                vector[0] <- 55;
+                vector[1] <- 99;
+                vector[2] <- 11;
+                vector[3] <- 56;
+                vector[4] <- 69;
+                
+                Para indice <- 0 Hasta 4 Con Paso 1 Hacer
+                    Escribir "[",indice,"] =" , " ",vector[indice];		
+                FinPara
+            FinProceso
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 2</b></p>
+            <p>
+                Crear un arreglo de números enteros de 20 posiciones, el cual, debe ser llenado con números aleatorios entre 1 y 100; después de haber llenado dicho arreglo, se debe volver a recorrer utilizando un ciclo diferente al que se usó para llenarse e imprimir los números pares e impares. Ejemplo
+                Números pares: 2, 4, 6, 8, 10 <br>
+                Números impares: 1, 3, 5, 7, 9
+            </p>
+            <pre>
+            <code>
+                Proceso punto2
+                Definir numero1, indice, random Como Entero;
+                Dimension numero1[20];
+                
+                random <- azar(100)+1;
+                
+                Escribir Sin Saltar "Numeros pares ";
+                Para indice <- 0 Hasta 19 Con Paso 1 Hacer
+                    numero1[indice] <- azar(100)+1;
+                    Si numero1[indice] % 2 = 0 Entonces
+                        
+                        Escribir numero1[indice], " " Sin Saltar;
+                    Finsi
+                FinPara
+                    
+                Escribir "";
+                
+                Escribir Sin Saltar "Numeros impares ";
+                Para indice <- 0 Hasta 19 Con Paso 1 Hacer
+                    Si numero1[indice] % 2 <> 0 Entonces
+                        Escribir numero1[indice], " " Sin Saltar;
+                    Finsi
+                FinPara
+            FinProceso
+            
+            
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 3</b></p>
+            <p>
+                Imprimir los números primos del 1 al 1000, el resultado debe ser buscado de forma matemática.
+            </p>
+            <pre>
+            <code>
+                Proceso punto3
+	
+                Definir primo, dividir, posicion, contador Como Entero;
+                Dimension primo[1000];
+                
+                contador <- 0;
+                
+                Escribir Sin Saltar "LOS NUMEROS PRIMOS SON: ";
+                Para posicion <- 0 hasta 999 Con Paso 1 Hacer
+                    primo[posicion] <- posicion + 1;
+                    Para dividir <- 1 Hasta posicion + 1 Hacer
+                        si primo[posicion] % dividir = 0 Entonces
+                            contador <- contador + 1;
+                        FinSi
+                    FinPara
+                    
+                    si contador = 2 Entonces
+                        Escribir primo[posicion] , " " Sin Saltar;
+                    FinSi
+                    
+                    si contador > 2 Entonces
+                        contador <- 0;
+                    FinSi
+                    
+                FinPara
+            FinProceso            
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 4</b></p>
+            <p>
+                Dada la siguiente matriz bidimensional, el cual debe de quemar en el código <br>
+                01 02 03 04 05  <br>
+                06 07 08 09 10 <br>
+                11 12 13 14 15 <br>
+                16 17 18 19 20 <br>
+                Utilizando el conocimiento adquirido, a excepción de hacerlo de forma manual, imprima la siguiente matriz bidimensional. <br>
+                01 02 03 04 05 <br>
+                10 09 08 07 06 <br>
+                11 12 13 14 15 <br>
+                20 19 18 17 16
+            </p>
+            <pre>
+            <code>
+                Proceso punto4
+                Definir fila, columna Como Entero;
+                Definir matriz1, matriz2 Como caracter;
+                Definir x,z Como Caracter;
+                Dimension matriz1[4,5];
+                Dimension matriz2[4,5];
+                //[filas,columnas]
+                
+                
+                Escribir "MATRIZ 1 ";
+                Para fila <- 0 Hasta 3 Con Paso 1 Hacer
+                    
+                    Para columna <- 0 Hasta 4 Con Paso 1 Hacer
+                        
+                        Si fila = 0 Entonces
+                            x <- ConvertirATexto(columna+1);
+                            matriz1[fila,columna] <-  Concatenar("0",x);
+                            Escribir matriz1[fila,columna] , " " Sin Saltar;
+                        FinSi
+                        
+                        Si fila = 1 Entonces
+                            x <- ConvertirATexto(columna+6);
+                            
+                            Si columna = 4 Entonces
+                                matriz1[fila,columna] <- x;
+                                Escribir matriz1[fila,columna] , " " Sin Saltar;
+                            SiNo
+                                matriz1[fila,columna] <-  Concatenar("0",x);
+                                Escribir matriz1[fila,columna] , " " Sin Saltar;
+                            FinSi
+                            
+                        FinSi
+                        
+                        Si fila = 2 Entonces
+                            x <- ConvertirATexto(columna+11);
+                            matriz1[fila,columna] <- x;
+                            Escribir matriz1[fila,columna] , " " Sin Saltar;
+                        FinSi
+                        
+                        Si fila = 3 Entonces
+                            x <- ConvertirATexto(columna+16);
+                            matriz1[fila,columna] <- x;
+                            Escribir matriz1[fila,columna] , " " Sin Saltar;
+                        FinSi
+                    FinPara
+                    
+                    Escribir "";
+                    
+                FinPara
+                
+                Escribir "";
+                
+                Escribir "MATRIZ 2 ";
+                Para fila <- 0 Hasta 3 Con Paso 1 Hacer
+                    
+                    Para columna <- 0 Hasta 4 Con Paso 1 Hacer
+                        
+                        Si fila = 0 Entonces
+                            x <- ConvertirATexto(columna+1);
+                            matriz1[fila,columna] <-  Concatenar("0",x);
+                            Escribir matriz1[fila,columna] , " " Sin Saltar;
+                        FinSi
+                        
+                        Si fila = 1 Y columna = 0 Entonces
+                            x <- ConvertirATexto(columna+10);
+                                matriz1[fila,columna] <- x;
+                                Escribir matriz1[fila,columna] , " " Sin Saltar;
+                        FinSi
+                        
+                        Si fila = 1 Y columna > 0 Entonces
+                            x <- ConvertirATexto(10-columna);
+                            matriz1[fila,columna] <-  Concatenar("0",x);
+                            Escribir matriz1[fila,columna] , " " Sin Saltar;
+                        Finsi	
+                        
+                        Si fila = 2 Entonces
+                            x <- ConvertirATexto(columna+11);
+                            matriz1[fila,columna] <- x;
+                            Escribir matriz1[fila,columna] , " " Sin Saltar;
+                        FinSi
+                        Si fila = 3 Entonces
+                            x <- ConvertirATexto(20-columna);
+                            matriz1[fila,columna] <-  x;
+                            Escribir matriz1[fila,columna] , " " Sin Saltar;
+                        Finsi
+                
+                    FinPara
+                    
+                    Escribir "";
+                    
+                FinPara
+            FinProceso
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 5</b></p>
+            <p>
+                Se debe de imprimir el siguiente cuadro <br>
+                <img src="images/tabla.png"> <br>
+                El usuario deberá insertar la fila y columna de la cual desea ver el resultado, el resultado de cada celda debe estar previamente calculado en una matriz bidimensional la cual cada resultado obedecerá a la fila y columna insertada por el usuario.
+            </p>
+            <pre>
+            <code>
+                Proceso punto5
+	
+                Definir x,z,w Como Caracter;
+                Definir matriz, fila , columna, fila1,columna1 Como Entero;
+                Definir seguir Como Logico;
+                Dimension w[10];
+                Dimension  matriz[10,10];
+                //[filas,columnas]
+                
+                
+                w[0] <- " ";
+                w[1] <- " ";
+                w[2] <- "F";
+                w[3] <- "I";
+                w[4] <- "L";
+                w[5] <- "A";
+                w[6] <- "S";
+                w[7] <- " ";
+                w[8] <- " ";
+                w[9] <- " ";
+                
+                seguir <- Verdadero;
+                Escribir "                                              COLUMNAS ";
+                Escribir "          [0]      [1]      [2]      [3]      [4]      [5]      [6]      [7]      [8]      [9]";
+            
+                Para fila <- 0 Hasta 9 Con Paso 1 Hacer
+                    
+                    Escribir w[fila],"  [", fila, "]   " Sin Saltar;
+                    
+                    Para columna <- 0 Hasta 9 Con Paso 1 Hacer
+                        x <- ConvertirATexto(fila+1);
+                        z <- ConvertirATexto(columna+1);
+                        matriz[fila,columna] <- (fila+1) * (columna+1);
+                        
+                        SI fila = 9 Entonces
+                            Escribir z, " X ", x , "   " Sin Saltar;
+                        SiNo
+                            Escribir z, " X ", x , "    " Sin Saltar;
+                        FinSi
+                    FinPara
+                    
+                    Escribir "";
+                FinPara
+                
+                Escribir "";
+                
+            Repetir
+                    Escribir "ESCRIBA LA FILA";
+                    Leer fila1;
+                    Escribir "ESCRIBA LA COLUMNA";
+                    Leer columna1;
+                    
+                    si fila1 < 10 Y columna1 < 10 Entonces
+                        Escribir "Resultado = ", matriz[fila1,columna1];
+                    SiNo
+                        Escribir "RANGO NO VALIDO, MATRIX DE 10X10";
+                    FinSi
+                Hasta Que seguir = Falso
+                
+            FinProceso
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7EAXF1_Nr9w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            </code>
+        </pre>
+        </section>
+
+    </div>
+</body>
+</html>

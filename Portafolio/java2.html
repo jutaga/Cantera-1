@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/talleresPseint.css">
+    <title>Taller 2</title>
+</head>
+<body>
+    <nav>
+        <a href="java1.html">TALLER 1</a>
+        <a href="java3.html">TALLER 3</a>
+        <a href="java4.html">TALLER 4</a>
+        <a href="portafolio.html">VOLVER A INICIO</a>
+    </nav>
+
+    <div class="contenedor">
+        <section>
+            <p><b>Punto 1</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto1.java">Github</a>
+            <p>
+                Realizar un programa en el cual se solicite la edad de una persona. Si
+                la persona es mayor o igual a 18 años, deberá mostrar en pantalla:
+                Usted es mayor de edad.
+            </p>
+            <pre>
+            <code>
+                package Taller2;
+                import java.util.Scanner;
+                
+                public class Punto1 {
+                    public static void main(String[] args) {
+                        int edad;
+                        Scanner input = new Scanner(System.in);
+                
+                        System.out.println("DIGITE SU EDAD");
+                        edad = input.nextInt();
+                
+                        if (edad >=18){
+                            System.out.println("ERES MAYOR DE EDAD");
+                        } else {
+                           System.out.println("ERES MENOR DE EDAD");
+                        }
+                    }
+                }
+            </code>
+        </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 2</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto2.java">Github</a>
+            <p>
+                Realizar un programa en el cual se solicite la edad de una persona. Si
+                la persona es menor a 18 años, deberá mostrar en pantalla: Usted aún
+                es un niño(a).
+            </p>
+            <pre>
+        <code>
+            package Taller2;
+            import java.util.Scanner;
+            
+            public class Punto2 {
+                public static void main(String[] args) {
+                    int edad;
+                    Scanner input = new Scanner(System.in);
+                    System.out.println("DIGITE SU EDAD");
+                    edad = input.nextInt();
+            
+                    if (edad < 18){
+                        System.out.println("USTED ES AUN UN NINIO(A)");
+                    } else {
+                        System.out.println("ERES UN ADULTO");
+                    }
+                }
+            }        
+
+        </code>
+    </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 3</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto3.java">Github</a>
+            <p>
+                Realizar un programa en el cual se solicite el nombre, apellidos y
+                edad de la persona. Si la persona es mayor o igual a 18 años, entonce
+                se deberá imprimir en pantalla [Nombre completo] usted es mayor de
+                edad, por lo tanto puede entrar a la fiesta. Si la edad de la persona
+                es menor que 18 años, entonces, deberá imprimirse el siguiente
+                mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no
+                puede entrar a la fiesta, por favor devuélvase a su casa.
+            </p>
+            <pre>
+    <code>
+        package Taller2;
+        import java.util.Scanner;
+        
+        public class Punto3 {
+            public static void main(String[] args) {
+                int edad;
+                String nombre,apellidos;
+                Scanner input = new Scanner(System.in);
+                Scanner input1 = new Scanner(System.in);
+        
+                System.out.println("DIGITE SU NOMBRE");
+                nombre = input.nextLine();
+                System.out.println("DIGITE SUS APELLIDOS");
+                apellidos = input.nextLine();
+                System.out.println("DIGITE SU EDAD");
+                edad = input1.nextInt();
+        
+                if (edad >= 18) {
+                    System.out.println(nombre + " " + apellidos + " USTED ES MAYOR DE EDAD, por lo tanto puede entrar a la fiesta, bienvenido(a)");
+                } else {
+                    System.out.println(nombre + " " +apellidos + " Usted es menor de edad, no puede entrar a la fiesta , retirese porfavor" );
+                }
+            }
+        }
+    </code>
+    </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 4</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto4.java">Github</a>
+            <p>
+                La video tienda que presta sus servicios de alquiler de películas a
+                los usuarios del barrio el Porvenir, requiere de una aplicación que
+                permita registrar el alquiler de las películas que adquieren sus
+                usuarios. Para cada usuario se debe permitir la opción de alquilar
+                película, consultar películas disponibles y recibir película en la
+                video tienda con la opción de realizar anotaciones sobre estas si se
+                llegan a presentar daños u otra novedad sobre la película.
+            </p>
+            <pre>
+        <code>
+            package Taller2;
+            import java.util.Scanner;
+            
+            public class Punto4 {
+                public static void main(String[] args) {
+                    String usuario , anotacion, entregar;
+                    int opcion;
+                    String pelicula1,pelicula2,pelicula3;
+                    Scanner input = new Scanner(System.in);
+                    Scanner input1 = new Scanner(System.in);
+            
+                    pelicula1 = "300 El renacer de un Imperio";
+                    pelicula2 = "La liga de la justicia";
+                    pelicula3 = "Piratas del caribe";
+            
+                    System.out.println("Bienvenido a nuestra tienda de alquiler de peliculas");
+                    System.out.print("Ingrese el nombre de usuario registrado: ");
+                    usuario = input.nextLine();
+            
+                    System.out.println("Eliga una de las operaciones a realizar");
+                    System.out.println("1. Consultar peliculas disponibles");
+                    System.out.println("2. Alquilar pelicula");
+                    System.out.println("3. Entregar pelicula");
+                    opcion = input1.nextInt();
+            
+                    if(opcion >=1 && opcion <= 3) {
+                        switch (opcion){
+                            case 1:
+                                System.out.println("Tenemos las siguientes peliculas disponibles ");
+                                System.out.println("1. " + pelicula1);
+                                System.out.println("2. " + pelicula2);
+                                System.out.println("3. " + pelicula3);
+                                break;
+                            case 2:
+                                System.out.println("CUAL PELICULA DESEAS ALQUILAR");
+                                System.out.println("1. " + pelicula1);
+                                System.out.println("2. " + pelicula2);
+                                System.out.println("3. " + pelicula3);
+                                opcion = input1.nextInt();
+            
+                                switch (opcion){
+                                    case 1:
+                                        System.out.println("Has alquilado " + pelicula1);
+                                        break;
+                                    case 2:
+                                        System.out.println("Has alquilado " + pelicula2);
+                                        break;
+                                    case 3:
+                                        System.out.println("Has alquilado " + pelicula3);
+                                        break;
+                                    default:
+                                        System.out.println("PELICULA NO VALIDA");
+                                        break;
+                                }
+                                break;
+                            case 3:
+                                System.out.print("QUE PELICULA DESEAS ENTREGAR: ");
+                                entregar = input.nextLine();
+                                System.out.print("¿Tiene alguna observacion de la pelicula? Si=1 o No=0 " );
+                                opcion = input1.nextInt();
+            
+                                if (opcion == 1 || opcion == 0){
+                                    if(opcion == 1){
+                                        System.out.print("Escribe tu observacion: ");
+                                        anotacion = input.nextLine();
+                                        System.out.println("Has entregado la pelicula:  " + entregar);
+                                        System.out.println("Nota: " + anotacion);
+                                        break;
+                                    }else {
+                                        System.out.println("Has entregado la pelicula:  " + entregar);
+                                        break;
+                                    }
+                                }
+                            break;
+                            default:
+                                System.out.println("NO VALIDO");
+                                break;
+                        }
+                    }else {
+                        System.out.println("OPCION NO VALIDA");
+                    }
+                }
+            }
+        </code>
+        </pre>
+        </section>
+
+        <section>
+            <h1><b>Punto 5</b></h1>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto5.java">Github</a>
+            <p>
+                La Droguería Mi Salud presta sus servicios en la localidad de Suba y
+                requiere una aplicación para poder facturar los productos que vende a
+                sus clientes y para ello, los productos tienen unas características
+                que deben indicársele al cliente para que pueda escoger el producto a
+                comprar. Para cada cliente, se tienen las opciones de compra de
+                producto, consulta de precios por producto y devoluciones en caso de
+                que se presenten.
+            </p>
+            <pre>
+            <code>
+                package Taller2;
+                import java.util.Scanner;
+                
+                public class Punto5 {
+                    public static String producto1 , producto2, producto3;
+                    public static Integer opcion, elegir;
+                    public static Scanner input = new Scanner(System.in);
+                    public static Scanner String = new Scanner(System.in);
+                
+                
+                    public static void main(String[] args) {
+                        producto1 = "Acetaminofen";
+                        producto2 = "Dolex Forte";
+                        producto3 = "Loratadina";
+                
+                       opcion = mostrarMenuPrincipal();
+                
+                        switch (opcion) {
+                            case 1 -> {
+                                elegir = mostrarProductos(producto1, producto2, producto3);
+                                preciosProductos(elegir, producto1, producto2, producto3);
+                            }
+                            case 2 -> {
+                                elegir = mostrarProductos(producto1, producto2, producto3);
+                                productoComprado(elegir, producto1, producto2, producto3);
+                            }
+                            case 3 -> devolucionProducto();
+                            default -> System.out.println("NO VALIDA");
+                        }
+                    }
+                
+                    private static Integer mostrarMenuPrincipal(){
+                        System.out.println("Bienvenido(a) a la Drogueria Mi Salud");
+                        System.out.println("Escoge que proceso deseas realizar con nosotros");
+                        System.out.println("1. Para consultar los productos");
+                        System.out.println("2. Para Comprar producto");
+                        System.out.println("3. Para Devoluciones");
+                        return input.nextInt();
+                    }
+                
+                    private static Integer mostrarProductos(String droga1, String droga2, String droga3){
+                        System.out.println("Contamos con los siguientes medicamentos: ");
+                        System.out.println("1. " + droga1);
+                        System.out.println("2. " + droga2);
+                        System.out.println("3. " + droga3);
+                        System.out.println("¿Cual producto deseas?");
+                        return input.nextInt();
+                    }
+                
+                    private static void preciosProductos(Integer escoger, String droga1, String droga2, String droga3){
+                        if(escoger == 1){
+                            System.out.println("Precio: 5000 $ de la caja de " + droga1);
+                        } else if (escoger == 2) {
+                            System.out.println("Precio: 7500 $ de la caja de " + droga2);
+                        }else if(escoger == 3){
+                            System.out.println("Precio: 3500 $ de la caja de " + droga3);
+                        }else {
+                            System.out.println("PRODUCTO NO VALIDO");
+                        }
+                    }
+                
+                    private static void productoComprado(Integer escoger, String droga1, String droga2, String droga3){
+                        if(escoger == 1){
+                            System.out.println("Has comprado: " + droga1 + " Caja de 14 tabletas por 5000$");
+                        } else if (escoger == 2) {
+                            System.out.println("Has comprado: " + droga2 + " Caja de 25 tabletas por 7500$");
+                        }else if(escoger == 3){
+                            System.out.println("Has comprado: " + droga3 + " Caja de 8 tabletas por 3500$");
+                        }else {
+                            System.out.println("PRODUCTO NO VALIDO");
+                        }
+                    }
+                
+                    private static void devolucionProducto(){
+                        System.out.print("¿QUE PRODUCTO DESEAS DEVOLVER?: ");
+                        String droga1 = String.nextLine();
+                        System.out.print("MOTIVO DE LA DEVOLUCION: ");
+                        String comentario = String.nextLine();
+                        System.out.println("Has devuelto " + droga1);
+                        System.out.println("Motivo: " + comentario);
+                    }
+                }          
+            </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 6</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto6.java">Github</a>
+            <p>
+                El taller de motos "El Maquinista" recibe motocicletas de alto
+                cilindraje para realizar las respectivas revisiones y requiere una
+                aplicación que le permita registrar los servicios generados a sus
+                clientes. Para cada motocicleta se debe tener registro del ingreso al
+                taller y las observaciones por parte del cliente. También debe existir
+                registro de salida del taller con las novedades y otra de arreglos
+                hechos por el mecánico en caso de que se requiera inventariar cambios
+                repuestos en la motocicleta al entregarla.
+            </p>
+            <pre>
+                <code>
+                    package Taller2;
+                    import java.util.Scanner;
+                    
+                    public class Punto6 {
+                        public static Integer menu,escogerMoto;
+                        public static String observacion1, observacion2,observacion3;
+                        public static String novedad1, novedad2,novedad3;
+                        public static String moto1, moto2, moto3;
+                        private static final Scanner input = new Scanner(System.in);
+                    
+                        public static void main(String[] args) {
+                            moto1 = "Victory";
+                            moto2 = "Yamaha";
+                            moto3 = "Boxer";
+                    
+                            observacion1 ="Reemplazo de caja de cambios";
+                            observacion2 = "Cambio de luces";
+                            observacion3 = "Revision tecnico mecanica";
+                    
+                            novedad1 = "PENDIENTE DEL REEMPLAZO DE LA CAJA DE CAMBIOS";
+                            novedad2 = "PENDIENTE DE CAMBIO DE LUCES";
+                            novedad3 = "PENDIENTE DE REVISION TECNICO MECANICA";
+                    
+                            menu = menuTaller();
+                    
+                            if (menu == 1){
+                                escogerMoto = elegirMoto(moto1,moto2,moto3);
+                                switch (escogerMoto){
+                                    case 1 -> estadoMoto(moto1,novedad1,novedad3);
+                                    case 2 -> estadoMoto(moto2,novedad2,novedad1);
+                                    case 3 -> estadoMoto(moto3,novedad2,novedad3);
+                                    default -> System.out.println("NO VALIDO");
+                                }
+                            }else if(menu == 2){
+                                escogerMoto = elegirMoto(moto1,moto2,moto3);
+                                switch (escogerMoto){
+                                    case 1 -> retirarMoto(moto1,observacion1,observacion3);
+                                    case 2 -> retirarMoto(moto2,observacion2,observacion1);
+                                    case 3 -> retirarMoto(moto3,observacion2,observacion3);
+                                    default -> System.out.println("MOTO NO VALIDA");
+                                }
+                            }else {
+                                System.out.println("NO VALIDO");
+                            }
+                        }
+                        private static int menuTaller(){
+                            System.out.println("Bienvenido a El taller de motos 'EL MAQUINISTA' ");
+                            System.out.println("1. CONSULTAR EL ESTADO DE SU MOTOCICLETA");
+                            System.out.println("2. RETIRAR SU MOTOCICLETA DEL TALLER");
+                            return input.nextInt();
+                        }
+                    
+                        private static int elegirMoto(String mot1, String mot2, String mot3){
+                            System.out.println("¿CUAL ES TU MOTOCICLETA?");
+                            System.out.println("1. " + mot1);
+                            System.out.println("2. " + mot2);
+                            System.out.println("3. " + mot3);
+                            return input.nextInt();
+                        }
+                    
+                        private static void estadoMoto(String mot, String nov1, String nov2){
+                            System.out.println(mot + " Esta pendiente de realizar las siguientes actividades: ");
+                            System.out.print(nov1 + " y " + nov2);
+                        }
+                    
+                        private static void retirarMoto(String mot, String nov1, String nov2){
+                            System.out.println("Tu moto " + mot + " ha sido retirada con exito");
+                            System.out.println("Se le realizarion las siguientes reparaciones: ");
+                            System.out.println(nov1 + " y " + nov2);
+                        }
+                    }
+                </code>
+                </pre>
+        </section>
+        <section>
+            <p><b>Punto 7</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto7.java">Github</a>
+            <p>
+                La Secretaría de Salud Municipal requiere de una aplicación que le
+                permita calcular el IMC (Índice de masa corporal) y requiere los datos
+                peso en kilogramos y estatura en metros Para cada persona encuestada
+                adicional a los datos suministrados, debe mostrar el resultado para
+                cada uno y establecer en qué rango se encuentra (bajo peso, normal,
+                sobrepeso y obeso).
+            </p>
+            <pre>
+            <code>
+                package Taller2;
+                import java.util.Scanner;
+                import java.lang.Math;
+                
+                public class Punto7 {
+                    public static Float peso1,estatura1;
+                    public static Float peso2, estatura2;
+                    public static String nombre1, nombre2;
+                    public static Integer menu;
+                    private static final Scanner input = new Scanner(System.in);
+                    private static final Scanner Float = new Scanner(System.in);
+                    private static final Scanner String = new Scanner(System.in);
+                
+                    public static void main(String[] args) {
+                
+                        menu = menuPrincipal();
+                
+                        if(menu == 1){
+                            nombre1 = pedirNombre();
+                            peso1 = pesoEstatura("peso","Kg");
+                            estatura1 = pesoEstatura("Estatura", "Mts");
+                            calcularIMC(nombre1,peso1,estatura1);
+                        }else if(menu == 2){
+                            nombre1 = pedirNombre();
+                            peso1 = pesoEstatura("peso","Kg");
+                            estatura1 = pesoEstatura("Estatura", "Mts");
+                            nombre2 = pedirNombre();
+                            peso2 = pesoEstatura("peso","Kg");
+                            estatura2 = pesoEstatura("Estatura", "Mts");
+                            System.out.println("Persona 1: ");
+                            calcularIMC(nombre1,peso1,estatura1);
+                            System.out.println("Persona 2: ");
+                            calcularIMC(nombre2,peso2,estatura2);
+                        } else {
+                            System.out.println("OPCION NO VALIDA");
+                        }
+                    }
+                    private static Integer menuPrincipal(){
+                        System.out.println("Bienvenido al Sistema de la Secretaria de Salud Municipal");
+                        System.out.println( "¿Cuantas personas van a realizar su pesaje?, MAXIMO = 2");
+                        return input.nextInt();
+                    }
+                
+                    private static String pedirNombre(){
+                        System.out.println("Digite el nombre de la persona");
+                        return String.nextLine();
+                    }
+                
+                    private static Float pesoEstatura(String texto, String medida){
+                        System.out.println("Digite su " + texto + " en " + medida);
+                        return Float.nextFloat();
+                    }
+                
+                    private static void calcularIMC(String name, Float peso,Float estatura){
+                        if (peso/Math.pow(estatura,2) < 18.5){
+                            System.out.println(name + " BAJO PESO , Peso inferior al normal");
+                        }
+                        if (peso/Math.pow(estatura,2) >= 18.5 && peso/Math.pow(estatura,2) < 25){
+                            System.out.println(name + " tu IMC es Normal");
+                        }
+                        if (peso/Math.pow(estatura,2) >= 25 && peso/Math.pow(estatura,2) < 30){
+                            System.out.println(name + " Peso superior al normal, SOBREPESO");
+                        }
+                        if (peso/Math.pow(estatura,2) >= 30){
+                            System.out.println(name + " Peso muy superior, Obesidad");
+                        }
+                    }
+                }
+            </code>
+        </pre>
+        </section>
+        <section>
+            <p><b>Punto 8</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto8.java">Github</a>
+            <p>
+                El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere
+                una aplicación que le permita registrar los pedidos de los clientes en
+                cuanto a las tortas que realiza. Cada torta tiene unas características
+                propias como sabor, cantidad (porciones) y decoraciones). Se requiere
+                que la aplicación permita registrar los pedidos, las tortas
+                disponibles y las ventas que se registren diariamente.
+            </p>
+            <pre>
+            <code>
+                package Taller2;
+                import java.util.Scanner;
+                
+                public class Punto8 {
+                    static public String torta1, torta2, torta3;
+                    static public String sabor1, sabor2, sabor3;
+                    static public Integer porciones1, porciones2,porciones3;
+                    static public Integer ventas1, ventas2, ventas3, operacion;
+                    private static final Scanner input = new Scanner(System.in);
+                
+                    public static void main(String[] args) {
+                
+                        ventas1 = 15;
+                        ventas2 = 9;
+                        ventas3 = 35;
+                
+                        torta1 = "Mousse";
+                        torta2 = "Fresas con crema";
+                        torta3 = "Cheesecake de Nutella";
+                
+                        sabor1 = "Chocolate";
+                        sabor2 = "Vainilla";
+                        sabor3 = "Fresa";
+                
+                        porciones1 = 8;
+                        porciones2 = 12;
+                        porciones3 = 6;
+                
+                        operacion = menuPrincipal();
+                        switch (operacion) {
+                            case 1 -> {
+                                caracteristicasTortas(torta1, sabor1, porciones1);
+                                caracteristicasTortas(torta2, sabor2, porciones2);
+                                caracteristicasTortas(torta3, sabor3, porciones3);
+                            }
+                            case 2 -> {
+                                operacion = elegirTorta(torta1, torta2, torta3);
+                                comprarTorta(operacion, torta1, torta2, torta3);
+                            }
+                            case 3 -> {
+                                registroVentas(ventas1, torta1);
+                                registroVentas(ventas2, torta2);
+                                registroVentas(ventas3, torta3);
+                            }
+                            default -> System.out.println("NO VALIDO");
+                        }
+                    }
+                
+                    private static Integer menuPrincipal(){
+                        System.out.println("Bienvenido a la Pasteleria");
+                        System.out.println("¿En que le podemos servir?");
+                        System.out.println("1. Consultar Tortas disponibles");
+                        System.out.println("2. Comprar Torta");
+                        System.out.println("3. Consultar Registro de ventas");
+                        return input.nextInt();
+                    }
+                
+                    private static void caracteristicasTortas(String pastel, String sabor, Integer partes){
+                        System.out.println(pastel);
+                        System.out.println(pastel + " Tiene las siguientes caracteristicas: ");
+                        System.out.println("Sabor de: " + sabor);
+                        System.out.println("Porciones: " + partes);
+                        System.out.println(" ");
+                    }
+                
+                    private static Integer elegirTorta(String pastel1, String pastel2, String pastel3){
+                        System.out.println("1. " + pastel1);
+                        System.out.println("2. " + pastel2);
+                        System.out.println("3. " + pastel3);
+                        return input.nextInt();
+                    }
+                
+                    private static void comprarTorta(Integer comprar, String pastel1, String pastel2, String pastel3){
+                        switch (comprar) {
+                            case 1 -> {
+                                System.out.println(pastel1 + " Comprada");
+                                System.out.println("Gracias por su compra");
+                            }
+                            case 2 -> {
+                                System.out.println(pastel2 + " Comprada");
+                                System.out.println("Gracias por su compra");
+                            }
+                            case 3 -> {
+                                System.out.println(pastel3 + " Comprada");
+                                System.out.println("Gracias por su compra");
+                            }
+                            default -> System.out.println("Torta no valida");
+                        }
+                    }
+                
+                    private static void registroVentas(Integer venta,String pastel){
+                        System.out.println(pastel + " Tiene un total de ventas de: " + venta + " Tortas por semana"  + "\n");
+                        System.out.println();
+                    }
+                }
+            </code>
+        </pre>
+        </section>
+        <section>
+            <p><b>Punto 9</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto9.java">Github</a>
+            <p>
+                El profesor de geometría está explicando a sus estudiantes las
+                fórmulas para calcular el área de diferentes figuras geométricas, para
+                ello requiere una aplicación que le facilite el ejercicio
+                solicitándole los valores al estudiante. La aplicación debe permitir
+                que el estudiante seleccione si desea calcular el área de un
+                rectángulo, triángulo o trapecio. No olvide solicitar los datos
+                necesarios para realizar cada cálculo y mostrar su respectivo
+                resultado.
+            </p>
+            <pre>
+            <code>
+                package Taller2;
+                import java.util.Scanner;
+                
+                public class Punto9 {
+                    public static Float baseCorta, baseLarga, alturah;
+                    public static Integer opciones;
+                    private static final Scanner input = new Scanner(System.in);
+                
+                
+                    public static void main(String[] args) {
+                
+                        opciones = menuPrincipal();
+                        if(opciones == 1){
+                            System.out.print("Digite la base: ");
+                            baseCorta = input.nextFloat();
+                            System.out.print("Digite la altura: ");
+                            alturah = input.nextFloat();
+                            rectangulo(baseCorta,alturah);
+                        }else if (opciones == 2){
+                            System.out.print("Digite la base: ");
+                            baseCorta = input.nextFloat();
+                            System.out.print("Digite la altura: ");
+                            alturah = input.nextFloat();
+                            trianguloNormal(baseCorta,alturah);
+                        }else if (opciones == 3){
+                            System.out.print("Digite la base corta: ");
+                            baseCorta = input.nextFloat();
+                            System.out.print("Digite la base larga: ");
+                            baseLarga = input.nextFloat();
+                            System.out.print("Digite la altura: ");
+                            alturah = input.nextFloat();
+                            trapecio(baseLarga,baseCorta,alturah);
+                        }else {
+                            System.out.println("TRIANGULO NO VALIDO");
+                        }
+                    }
+                
+                    private static Integer menuPrincipal(){
+                        System.out.println("Define el tipo de triangulo para calcular su AREA");
+                        System.out.println("1. Rectangulo");
+                        System.out.println("2. Triangulo");
+                        System.out.println("3. Trapecio");
+                        return input.nextInt();
+                    }
+                
+                    private static void rectangulo(Float base, Float altura){
+                        float resultado = base * altura;
+                        System.out.println("SU AREA ES: " + resultado);
+                
+                    }
+                
+                    private static void trianguloNormal(Float base, Float altura){
+                        float resultado = (base * altura) / 2;
+                        System.out.println("SU AREA ES: " + resultado);
+                    }
+                
+                    private static void trapecio(Float base1, Float base2, Float altura){
+                        float resultado = ((base1 + base2)* altura)/2;
+                        System.out.println("SU AREA ES: " + resultado);
+                    }
+                   }
+                
+            </code>
+        </pre>
+        </section>
+        <section>
+            <p><b>Punto 10</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller2/Punto10.java">Github</a>
+            <p>
+                El banco "Su banco fiel" es un banco que inicia sus actividades
+                financieras y necesita una aplicación para llevar las cuentas de sus
+                usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos
+                titular y cantidad. Para cada cliente las cuentas permitirán realizar
+                ingresos, retiros o consultas de valor. En los ingresos no se pueden
+                insertar valores negativos y para los retiros el valor no puede ser
+                mayor al valor que tiene en la cuenta.
+            </p>
+            <pre>
+            <code>
+                package Taller2;
+                import java.util.Scanner;
+                
+                public class Punto10 {
+                
+                    static public String titular1,titular2,usuario;
+                    static public Integer saldo1, saldo2,retiro,ingreso, operacion;
+                    private static final Scanner input = new Scanner(System.in);
+                    private static final Scanner string = new Scanner(System.in);
+                
+                    public static void main(String[] args) {
+                
+                        titular1 = "juan";
+                        saldo1 = 11000;
+                
+                        titular2 = "pablo";
+                        saldo2 = 21000;
+                
+                        operacion = menuPrincipal();
+                
+                        switch (operacion) {
+                            case 1 -> {
+                                System.out.println("CUAL ES TU USUAIRO");
+                                usuario = string.nextLine();
+                                if (usuario.equals(titular1) || usuario.equals(titular2)) {
+                                    if (usuario.equals(titular1)) {
+                                        System.out.print("Digite el monto a consignar: ");
+                                        ingreso = input.nextInt();
+                                        saldo1 = depositarDinero(saldo1, ingreso);
+                                    } else {
+                                        System.out.print("Digite el monto a consignar: ");
+                                        ingreso = input.nextInt();
+                                        saldo2 = depositarDinero(saldo2, ingreso);
+                                    }
+                                } else {
+                                    System.out.println("USUARIO NO VALIDO");
+                                }
+                            }
+                            case 2 -> {
+                                System.out.println("CUAL ES TU USUAIRO");
+                                usuario = string.nextLine();
+                                if (usuario.equals(titular1) || usuario.equals(titular2)) {
+                                    if (usuario.equals(titular1)) {
+                                        System.out.print("Digite el monto a retirar: ");
+                                        retiro = input.nextInt();
+                                        saldo1 = retirarDinero(saldo1, retiro);
+                                    } else {
+                                        System.out.print("Digite el monto a retirar: ");
+                                        retiro = input.nextInt();
+                                        saldo2 = retirarDinero(saldo2, retiro);
+                                    }
+                                } else {
+                                    System.out.println("USUARIO NO VALIDO");
+                                }
+                            }
+                            case 3 -> {
+                                System.out.println("CUAL ES TU USUAIRO");
+                                usuario = string.nextLine();
+                                consultarSaldo(usuario, saldo1, saldo2, titular1, titular2);
+                            }
+                        }
+                    }
+                
+                    private static Integer menuPrincipal(){
+                        System.out.println("Bienvenido a su Banco Fiel");
+                        System.out.println("¿Que operacion desea realizar?");
+                        System.out.println("1. Ingresar monto");
+                        System.out.println("2. Retirar monto");
+                        System.out.println("3. Consultar saldo");
+                        return input.nextInt();
+                    }
+                
+                    private static Integer depositarDinero(Integer saldo,Integer consignado){
+                        if(consignado >0){
+                            System.out.println("HAS CONSIGNADO: " + consignado + " Tu saldo actual es: "+ (saldo + consignado) );
+                        }else {
+                            System.out.println("MONTO NO VALIDO");
+                        }
+                        return saldo + consignado;
+                      }
+                
+                    private static Integer retirarDinero(Integer saldo, Integer retirado){
+                        if(retirado > 0 && retirado <= saldo){
+                            System.out.println("HAS RETIRADO: " + retirado + " Tu saldo actual es: " + (saldo - retirado));
+                        }else {
+                            System.out.println("MONTO A RETIRAR NO VALIDO");
+                        }
+                        return saldo - retirado;
+                    }
+                
+                    private static void consultarSaldo(String user, Integer saldo, Integer saldo1, String name1, String name2){
+                        if(user.equals(name1) ||user.equals(name2)){
+                            if(user.equals(name1)){
+                                System.out.println("TU SALDO ES DE: "+ saldo);
+                            }else {
+                                System.out.println("TU SALDO ES DE: "+ saldo1);
+                            }
+                        }else {
+                            System.out.println("USUARIO NO VALIDO");
+                        }
+                    }
+                }
+                
+            </code>
+        </pre>
+        </section>
+    </div>
+</body>
+</html>

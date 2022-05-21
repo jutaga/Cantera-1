@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOJA DE VIDA</title>
+    <link rel="icon" href="images/fotohdv.PNG">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/control.js"></script>
+</head>
+<body id="principal" >
+    <header>
+        <nav id="barraNavegacion">
+            <a class ="opciones" href="ExperienciaLaboral.html">Experiencia laboral</a>
+            <a class ="opciones" href="ReferenciasPersonales.html">Referencias personales</a>
+            <a class ="opciones" href="ReferenciasFamiliares.html">Referencias familiares</a>
+            <a class ="opciones" href="EstudiosRealizados.html">Estudios realizados</a> 
+            <a class ="opciones" href="portafolio.html">Portafolio</a> 
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <img src="images/fotohdv.PNG" alt = "FOTO PERSONAL">
+            <h1 class="titulo">INFORMACION PERSONAL</h1>
+               <article>                
+                <div class="container"> 
+                <section class ="informacion" id="menu1">
+                    <a href="#menu1">Informacion Personal</a>
+                    <p><b>NOMBRE:</b> JUAN PABLO TABARES GALLEGO <br><br>
+                        <b>DOCUMENTO DE IDENTIDAD:</b> 1.037.650.333 de Envigado Antioquia<br><br>
+                        <b>FECHA DE NACIMIENTO:</b> 26 de Julio de 1996 <br><br>
+                        <b>ESTADO CIVIL:</b> Soltero <br><br>
+                        <b>CIUDAD:</b> Envigado - Antioquia <br><br>
+                        <b>DIRECCION:</b> CLL 39 sur N25c-89 Urb Palo verde <br> <br>
+                        <b>TELEFONO:</b> 3271735 - cel: 3195472998 <br><br>
+                        <b>E-MAIL: </b><a class="email" href="mailto:juancho9615@hotmail.com">juancho9615@hotmail.com</a> <br> </p>
+                </section>  
+                </div>              
+            </article>
+        </section>
+        <aside>
+            <div id="colores">
+                <button id="color1" value="1" type="button" onclick="cambiarColores('color1')" ></button> <br>
+                <button id="color2" value="2" type="button" onclick="cambiarColores('color2')" ></button><br>
+                <button id="color3" value="3" type="button" onclick="cambiarColores('color3')" ></button><br>
+                <button id="color4" value="4" type="button" onclick="cambiarColores('color4')">ESTANDAR</button>
+            </div>
+        </aside>                    
+    </main>
+    <footer>
+        <p class="textoDescargar">DESCARGAR HOJA DE VIDA</p>
+        <a class="linkDescarga" href="download/HOJA DE VIDA JUAN PABLO.pdf"> CLICK AQUI</a>
+    </footer>       
+</body>
+</html>

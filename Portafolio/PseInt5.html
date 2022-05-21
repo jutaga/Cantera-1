@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/talleresPseint.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 5</title>
+</head>
+
+<body>
+    <nav>
+        <a href="PseInt1.html">TALLER 1</a>
+        <a href="PseInt2.html">TALLER 2</a>
+        <a href="PseInt3.html">TALLER 3</a>
+        <a href="PseInt5.html">TALLER 5</a>
+        <a href="portafolio.html">VOLVER A INICIO</a>
+    </nav>
+
+    <div class="contenedor">
+        <section>
+            <h1>Taller 1 funciones</h1>
+            <p><b>Punto 1</b></p>
+            <p>
+                Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18
+                años, deberá mostrar en pantalla: Usted es mayor de edad.
+            </p>
+            <pre>
+                <code>
+    SubProceso capturar <- capturarEdad()
+	Definir capturar Como Entero;
+	Escribir "Digite su edad: " Sin Saltar;
+	Leer capturar;
+    FinSubProceso
+
+    SubProceso mayoroMenor(num)
+	Definir mayorMenor Como Entero;
+	Si num >= 18 Entonces
+		Escribir "ERES MAYOR DE EDAD";
+	SiNo
+		Escribir "ERES MENOR DE EDAD";
+	FinSi
+    FinSubProceso
+
+    Proceso punto1
+	Definir edad Como Entero;
+	
+	edad <- capturarEdad();
+	mayoroMenor(edad);
+	
+    FinProceso
+
+
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 2</b></p>
+            <p>
+                Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años,
+                deberá mostrar en pantalla: Usted aún es un niño(a).
+            </p>
+            <pre>
+                <code>
+    SubProceso capturar <- capturarEdad()
+	    Definir capturar Como Entero;
+	    Escribir "Digite su edad: " Sin Saltar;
+	    Leer capturar;
+    FinSubProceso
+
+    SubProceso mayoroMenor(num)
+    	Definir mayorMenor Como Entero;
+    	Si num < 18 Entonces
+    		Escribir "USTED ES UN NIÑO(A)";
+    	SiNo
+    		Escribir "ERES UN ADULTO";
+    	FinSi
+    FinSubProceso
+
+    Proceso punto2
+	    Definir edad Como Entero;
+	
+	    edad <- capturarEdad();
+    	mayoroMenor(edad);	
+    FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 3</b></p>
+            <p>
+                Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es
+                mayor o igual a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de
+                edad, por lo tanto puede entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces,
+                deberá imprimirse el siguiente mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no puede
+                entrar a la fiesta, por favor devuélvase a su casa.
+            </p>
+            <pre>
+                <code>
+
+SubProceso nombre <- pedirNombre()
+	Definir nombre Como Caracter;
+	Escribir "DIGITE SU NOMBRE " Sin Saltar;
+	Leer nombre;
+FinSubProceso
+
+SubProceso apellidos <- pedirApellidos()
+	Definir apellidos Como Caracter;
+	Escribir "DIGITE SUS APELLIDOS " Sin Saltar;
+	Leer apellidos;
+FinSubProceso
+
+SubProceso capturar <- capturarEdad()
+	Definir capturar Como Entero;
+	Escribir "Digite su edad: " Sin Saltar;
+	Leer capturar;
+FinSubProceso
+
+SubProceso mayoroMenor(num,nom,apel)
+	Si num >= 18 Entonces
+		Escribir nom, " ", apel, " USTED ES MAYOR DE EDAD, POR LO TANTO PUEDE ENTRAR A LA FIESTA, BIENVENIDO(A)";
+	SiNo
+		Escribir nom, " ", apel, " USTED ES MENOR DE EDAD, POR LO TANTO NO PUEDE ENTRAR A LA FIESTA";
+	FinSi
+FinSubProceso
+
+Proceso punto3
+	Definir edad Como Entero;
+	Definir nombre, apellidos Como Caracter;
+	nombre <- pedirNombre();
+	apellidos <- pedirApellidos();
+	edad <- capturarEdad();
+	mayoroMenor(edad,nombre,apellidos);
+FinProceso
+
+
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 4</b></p>
+            <p>
+                La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir,
+                requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus
+                usuarios. Para cada usuario se debe permitir la opción de alquilar película, consultar películas
+                disponibles y recibir película en la video tienda con la opción de realizar anotaciones sobre estas si
+                se llegan a presentar daños u otra novedad sobre la película.
+            </p>
+            <pre>
+                <code>
+
+SubProceso usuario <- PedirUsuario()
+	Definir usuario Como Caracter;
+	Escribir "Bienvenido a nuestra tienta de alquiler de peliculas";
+	Escribir "Ingrese el nombre de usuario registrado";
+	Leer usuario;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso menu <- menuPrincipal()
+	Definir menu Como Entero;
+	Escribir "Eliga una de las opcines a realizar";
+	Escribir "1. Consultar peliculas disponibles";
+	Escribir "2. Alquilar Pelicula";
+	Escribir "3. Entregar pelicula";
+	Leer menu;
+	Limpiar Pantalla;
+FinSubProceso
+
+
+SubProceso opcionesPeliculas(peli1,peli2,peli3)
+	Escribir "Peliculas";
+	Escribir "1. ", peli1;
+	Escribir "2. ", peli2;
+	Escribir "3. ", peli3;
+FinSubProceso
+
+SubProceso alquilar<- alquilarPelicula(usuario,peli1,peli2,peli3)
+	Definir alquilar Como Entero;
+	Leer alquilar;
+	Limpiar Pantalla;
+	Segun alquilar Hacer
+		1:
+			Escribir usuario ," Has alquilado la pelicula: ", peli1;
+		2:
+			Escribir usuario ," Has alquilado la pelicula: ", peli2;
+		3:
+			Escribir usuario ," Has alquilado la pelicula: ", peli3;
+		De Otro Modo:
+			Escribir "OPCION NO VALIDA";
+	FinSegun
+FinSubProceso
+
+SubProceso entregar <- entregaPelicula(peli1,peli2,peli3,nota1)
+	Definir entregar Como Entero;
+	Leer entregar;
+	Segun entregar Hacer
+		1:
+			Escribir " Has entregado la pelicula: ", peli1;
+			Escribir "Observacion: ",nota1;
+		2:
+			Escribir " Has entregado la pelicula: ", peli2;
+			Escribir "Observacion: ",nota1;
+		3:
+			Escribir " Has entregado la pelicula: ", peli3;
+			Escribir "Observacion: ",nota1;
+		De Otro Modo:
+			Escribir "OPCION NO VALIDA";
+	FinSegun
+FinSubProceso
+
+Proceso Punto4
+	Definir usuario,peliculas , nota Como Caracter;
+	Definir opcion Como Entero;
+	Dimension peliculas[3];
+	
+	peliculas[0] <- "300 el renacer de un imperio";
+	peliculas[1] <- "La liga de la justicia";
+	peliculas[2] <- "Piratas del caribe";
+	
+	usuario <- PedirUsuario();
+	opcion <- menuPrincipal();
+	
+	Segun opcion Hacer
+		1:
+			opcionesPeliculas(peliculas[0],peliculas[1],peliculas[2]);
+		2:
+			opcionesPeliculas(peliculas[0],peliculas[1],peliculas[2]);
+			opcion <- alquilarPelicula(usuario,peliculas[0],peliculas[1],peliculas[2]);
+		3:
+			Escribir "Deseas agregar una anotacion SI:1 o NO:0";
+			Leer opcion;
+			Limpiar Pantalla;
+			Segun  opcion Hacer
+				0:
+					nota <- "NINGUNA";
+				1:
+					Escribir "ESCRIBE TU OBSERVACION" Sin Saltar;
+					Leer nota;
+					Limpiar Pantalla;
+					
+				De Otro Modo:
+					nota <- "NINGUNA";
+				
+			FinSegun
+			opcionesPeliculas(peliculas[0],peliculas[1],peliculas[2]);
+			opcion <- entregaPelicula(peliculas[0],peliculas[1],peliculas[2],nota);
+			De Otro Modo:
+			Escribir "OPCION NO VALIDA";
+			
+	FinSegun
+	
+	
+FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 5</b></p>
+            <p>
+                La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder
+                facturar los productos que vende a sus clientes y para ello, los productos tienen unas características
+                que deben indicársele al cliente para que pueda escoger el producto a comprar. Para cada cliente, se
+                tienen las opciones de compra de producto, consulta de precios por producto y devoluciones en caso de
+                que se presenten.
+            </p>
+            <pre>
+                <code>
+
+SubProceso menu <- menuPrincipal()
+	Definir menu Como Entero;
+	Escribir "Bienvenido(a) a la Drogueria Mi Salud";
+	Escribir "Escoge que proceso deseas realizar con nosotros";
+	Escribir "1. Para consultar los productos";
+	Escribir "2. Para Compra de productos";
+	Escribir "3. Para Devolucion de productos";
+	Leer menu;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso medicamentos <- mostrarMedicamentos(pro1,pro2,pro3)
+	Definir medicamentos Como Entero;
+	Escribir "Contamos con los siguientes medicamentos: ";
+	Escribir "1. ",pro1, " Caja de 14 tabletas";
+	Escribir "2. ",pro2,  " Caja de 25 tabletas";
+	Escribir "3. ", pro3, " Caja de 8 tabletas";
+	Escribir "¿Cual productos deseas?";
+	Leer medicamentos;
+FinSubProceso
+
+SubProceso preciosProductos(pastilla,pro1,pro2,pro3)
+	Si pastilla = 1 Entonces
+		Escribir "Precio: 5000 $ de la caja de ",pro1 ;
+	FinSi
+	Si pastilla = 2 Entonces
+		Escribir "Precio: 7500 $ de la caja de ", pro2;
+	FinSi
+	Si pastilla = 3 Entonces
+		Escribir "Precio: 3500 $ de la caja de ",pro3;
+	FinSi
+FinSubProceso
+
+SubProceso productoComprado(comprar,pro1,pro2,pro3)
+	Si comprar = 1 Entonces
+		Escribir "Has comprado: ",pro1, " Caja de 14 tabletas por 5000$";
+	FinSi
+	Si comprar = 2 Entonces
+		Escribir "Has comprado: ",pro2, " Caja de 25 tabletas por 7500$";
+	FinSi
+	Si comprar = 3 Entonces
+		Escribir "Has comprado: ",pro3, " Caja de 8 tabletas por 3500$";
+	FinSi
+	Si comprar > 3 Entonces
+		Escribir "NO HAS SELECCIONADO NINGUN PRODUCTO";
+	FinSi
+FinSubProceso
+
+SubProceso devolver <- devolucionProducto(pro1,pro2,pro3)
+	Definir devolver como Entero;
+	Escribir "¿QUE PRODUCTO DESEAS DEVOLVER?";
+	Escribir "1. ",pro1, " Caja de 14 tabletas";
+	Escribir "2. ",pro2,  " Caja de 25 tabletas";
+	Escribir "3. ", pro3, " Caja de 8 tabletas";
+	Leer devolver;
+FinSubProceso
+
+SubProceso comentario <- comentarioAnotacion()
+	Definir comentario Como Caracter;
+	Escribir "RAZON DE LA DEVOLCION: " Sin Saltar;
+	Leer comentario;
+FinSubProceso
+
+SubProceso imprimirDevolucion(devolucion,comentario,pro1,pro2,pro3)
+	Si devolucion = 1 Entonces
+		Escribir "Has devuelto: ",pro1, " Caja de 14 tabletas";
+		Escribir "RAZON: ", comentario;
+	FinSi
+	Si devolucion = 2 Entonces
+		Escribir "Has devuelto: ",pro2, " Caja de 25 tabletas";
+		Escribir "RAZON: ", comentario;
+	FinSi
+	Si devolucion = 3 Entonces
+		Escribir "Has devuelto: ",pro3, " Caja de 8 tabletas";
+		Escribir "RAZON: ", comentario;
+	FinSi
+	Si devolucion > 3 Entonces
+		Escribir "NO HAS SELECCIONADO NINGUN PRODUCTO";
+	FinSi
+FinSubProceso
+
+Proceso punto5
+	Definir opcion como entero;
+	Definir producto1, producto2,producto3,devolucion Como Caracter;
+	
+	producto1 <- "Acetaminofen";
+	producto2 <- "Dolex Forte";
+	producto3 <- "Loratadina";
+	
+	opcion <- menuPrincipal();
+	
+	Si opcion = 1 O opcion = 2 O opcion = 3 Entonces
+		Segun opcion Hacer
+			1:
+				opcion <- mostrarMedicamentos(producto1,producto2,producto3);
+				preciosProductos(opcion,producto1,producto2,producto3);
+			2:	
+				opcion <- mostrarMedicamentos(producto1,producto2,producto3);
+				productoComprado(opcion,producto1,producto2,producto3);
+			3:
+				opcion <- devolucionProducto(producto1,producto2,producto3);
+				Limpiar Pantalla;
+				devolucion <- comentarioAnotacion();
+				imprimirDevolucion(opcion,devolucion,producto1,producto2,producto3);
+		FinSegun
+	SiNo
+		Escribir "OPCION NO VALIDA";
+	FinSi
+FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 6</b></p>
+            <p>
+                El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas
+                revisiones y requiere una aplicación que le permita registrar los servicios generados a sus clientes.
+                Para cada motocicleta se debe tener registro del ingreso al taller y las observaciones por parte del
+                cliente. También debe existir registro de salida del taller con las novedades y otra de arreglos hechos
+                por el mecánico en caso de que se requiera inventariar cambios repuestos en la motocicleta al
+                entregarla.
+            </p>
+            <pre>
+                <code>
+
+SubProceso menu <- menuTaller()
+	Definir menu Como Entero;
+		Escribir "Bienvenido a El taller de motos EL MAQUINISTA";
+		Esperar 3 Segundos;
+		Limpiar Pantalla;
+		Escribir "1. CONSULTAR EL ESTADO DE SU MOTOCICLETA";
+		Escribir "2. RETIRAR SU MOTOCICLETA DEL TALLER ";
+		Leer menu;
+FinSubProceso
+
+SubProceso moto <- elegirMoto(mot1,mot2,mot3)
+	Definir moto Como Entero;
+	Escribir "¿Cual es tu motocicleta?";
+	Escribir "1. ",mot1;
+	Escribir "2. ",mot2;
+	Escribir "3. ",mot3;
+	Leer moto;
+FinSubProceso
+
+SubProceso estadoMoto(moto,nov1,nov2)
+	Escribir moto, " esta pendiente de realizar las siguientes actividades: ";
+	Escribir nov1, " y ", nov2;
+FinSubProceso
+
+SubProceso retirarMoto(moto,obs1,obs2)
+	Escribir "Tu moto ", moto, " ha sido retirada";	
+	Escribir "Se le realizaron las siguientes reparaciones: ";
+	Escribir obs1 , " y " , obs2;
+FinSubProceso
+
+Proceso punto6
+	Definir menu1 Como Entero;
+	Definir observacion1,observacion2,observacion3 Como Caracter;
+	Definir novedad1,novedad2,novedad3 Como Caracter;
+	Definir moto1,moto2,moto3 Como Caracter;
+	
+	
+	
+	moto1 <- "VICTORY";
+	moto2 <- "YAMAHA";
+	moto3 <- "BOXER";
+	
+	observacion1 <- "REEMPLAZO DE CAJA DE CAMBIOS";
+	observacion2 <- "CAMBIO DEL LUCES";
+	observacion3 <- "REVISION TECNICO MECANICA";
+	
+	novedad1 <- "PENDIENTE DEL REEMPLAZO DE LA CAJA DE CAMBIOS";
+	novedad2 <- "PENDIENTE DE CAMBIO DE LUCES";
+	novedad3 <- "PENDIENTE DE REVISION TECNICO MECANICA";
+	
+	menu1 <- menuTaller();
+	Limpiar Pantalla;
+	
+	Segun menu1 hacer
+			1:
+				menu1 <- elegirMoto(moto1,moto2,moto3);
+				
+				Segun menu1 Hacer
+					1:
+						estadoMoto(moto1,novedad1,novedad3);
+					2:
+						estadoMoto(moto2,novedad2,novedad1);
+					3:
+						estadoMoto(moto3,novedad2,novedad3);
+					De Otro Modo:
+						Escribir "NO VALIDO";
+				FinSegun
+				
+			2:
+				menu1 <- elegirMoto(moto1,moto2,moto3);
+				
+				Segun menu1 Hacer
+					1:
+						retirarMoto(moto1,observacion1,observacion3);
+					2:
+						retirarMoto(moto2,observacion2,observacion1);
+					3:
+						retirarMoto(moto3,observacion2,observacion3);
+					De otro modo:
+						Escribir "no valido"; 
+					
+				FinSegun
+			
+		De Otro Modo:
+			escribir "no valido";
+	FinSegun
+	
+FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 7</b></p>
+            <p>
+                La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de
+                masa corporal) y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada
+                adicional a los datos suministrados, debe mostrar el resultado para cada uno y establecer en qué rango
+                se encuentra (bajo peso, normal, sobrepeso y obeso).
+            </p>
+            <pre>
+                <code>
+
+SubProceso menu <- menuPrincipal()
+	Definir menu Como Entero;
+	Escribir "Bienvenido al Sistema de la Secretaria de Salud Municipal";
+	Escribir  "¿Cuantas personas van a realizar su pesaje?, MAXIMO = 2";
+	leer menu;
+FinSubProceso
+
+SubProceso name <- pedirNombre()
+	definir name Como Caracter;
+	Escribir "Digite el nombre de la persona: ";
+	Leer name;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso peso <- pesoPersona()
+	Definir peso Como Real;
+	Escribir "Digite su peso en Kg" Sin Saltar;
+	Leer peso;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso estatura <- estaturaPersona()
+	Definir estatura Como Real;
+	Escribir "Digite su estatura en Metros" Sin Saltar;
+	Leer estatura;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso indiceDeMasa(peso,estatura,name)
+	
+	si (peso/(estatura)^2) < 18.5 Entonces
+		Escribir name," BAJO PESO , Peso inferior al normal";
+	FinSi
+	Si (peso/(estatura)^2) >= 18.5 Y (peso/(estatura)^2) < 25 Entonces
+		Escribir name, " tu IMC es Normal";
+		
+	FinSi
+	Si (peso/(estatura)^2) >= 25 Y (peso/(estatura)^2) < 30 Entonces
+		Escribir name, " Peso superior al normal, SOBREPESO";
+	FinSi
+	Si (peso/(estatura)^2) >= 30 Entonces
+		Escribir name, " Peso muy superior, Obesidad";
+	FinSi
+FinSubProceso
+
+Proceso punto7
+	Definir peso1,estatura1 Como Real;
+	Definir peso2,estatura2 Como Real;
+	Definir nombre1,nombre2 Como Caracter;
+	Definir selector Como Entero;
+	
+	selector <- menuPrincipal();
+	Limpiar Pantalla;
+	
+	Segun selector Hacer
+		1:
+			nombre1 <- pedirNombre();
+			peso1 <- pesoPersona();
+			estatura1 <- estaturaPersona();
+			indiceDeMasa(peso1,estatura1,nombre1);
+		2:
+			nombre1 <- pedirNombre();
+			peso1 <- pesoPersona();
+			estatura1 <- estaturaPersona();
+			nombre2 <- pedirNombre();
+			peso2 <- pesoPersona();
+			estatura2 <- estaturaPersona();
+			Escribir "persona 1: " Sin Saltar;
+			indiceDeMasa(peso1,estatura1,nombre1);
+			Escribir "persona 2: " Sin Saltar ;
+			indiceDeMasa(peso2,estatura2,nombre2);
+
+		De Otro Modo:
+			Escribir "NO VALIDO PARA MAS DE DOS PERSONAS";
+	FinSegun
+FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 8</b></p>
+            <p>
+                El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita
+                registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas
+                características propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación
+                permita registrar los pedidos, las tortas disponibles y las ventas que se registren diariamente.
+            </p>
+            <pre>
+                <code>
+
+SubProceso menu <- menuPrincipal()
+	Definir menu Como Entero;
+	Escribir "Bienvenido a la Pasteleria";
+	Esperar 3 Segundos;
+	Limpiar Pantalla;
+	Escribir "¿En que le podemos servir?";
+	Escribir "1. Consultar Tortas disponibles";
+	Escribir "2. Comprar Torta";
+	Escribir "3. Consultar Registro de ventas";
+	Leer menu;
+FinSubProceso
+
+SubProceso elegir <- elegirTorta(pastel1,pastel2,pastel3)
+	Definir elegir Como Entero;
+	Escribir "1. ", pastel1;
+	Escribir "2. ", pastel2;
+	Escribir "3. ", pastel3;
+	Leer elegir;
+FinSubProceso
+
+SubProceso tortasDisponibles(pastel,taste,partes)
+	Escribir pastel;
+	Escribir pastel , " Tiene las siguientes caracteristicas: ";
+	Escribir "Sabor de: ", taste;
+	Escribir "Porciones: ", partes;
+	Escribir "";
+FinSubProceso
+
+SubProceso comprarTorta(comprar,pastel1,pastel2,pastel3)
+	Si comprar = 1 Entonces
+		Escribir pastel1 , " Comprada";
+		Escribir "Gracias Por su compra";
+	FinSi
+	Si comprar = 2 Entonces
+		Escribir pastel2 , " Comprada";
+		Escribir "Gracias Por su compra";
+	FinSi
+	Si comprar = 3 Entonces
+		Escribir pastel3 , " Comprada";
+		Escribir "Gracias Por su compra";
+	FinSi
+	Si comprar > 3 Entonces
+		Escribir "Compra no valida";
+	FinSi
+FinSubProceso
+
+SubProceso registroVentas(venta,pastel)
+	Escribir pastel, " Tiene un total de ventas de: ",venta, " Tortas por semana";
+	Escribir "";
+FinSubProceso
+
+Proceso punto8
+	Definir torta1, sabor1 Como Caracter;
+	Definir torta2, sabor2 Como Caracter;
+	Definir torta3, sabor3 Como Caracter;
+	Definir porciones1 , porciones2 , porciones3 Como Entero;
+	Definir ventas1 , ventas2 , ventas3 Como Entero;
+	Definir operacion Como Entero;
+	
+	ventas1 <- 15;
+	ventas2 <- 9;
+	ventas3 <- 35;
+	
+	torta1 <- "Mousse";
+	torta2 <- "Fresas con crema";
+	torta3 <- "Cheesecake de Nutella";
+	
+	sabor1 <- "Chocolate";
+	sabor2 <- "Vainilla";
+	sabor3 <- "Fresa";
+	
+	porciones1 <- 8;
+	porciones2 <- 12;
+	porciones3 <- 6;
+	
+	operacion <- menuPrincipal();
+	Limpiar Pantalla;
+	
+	Segun operacion Hacer
+		1:
+			tortasDisponibles(torta1,sabor1,porciones1);
+			tortasDisponibles(torta2,sabor2,porciones2);
+			tortasDisponibles(torta3,sabor3,porciones3);
+		2:
+			operacion <- elegirTorta(torta1,torta2,torta3);
+			comprarTorta(operacion,torta1,torta2,torta3);
+		3:
+			registroVentas(ventas1,torta1);
+			registroVentas(ventas2,torta2);
+			registroVentas(ventas3,torta3);
+		De Otro Modo:
+			Escribir "OPERACION NO VALIDA";
+	FinSegun
+	
+FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 9</b></p>
+            <p>
+                El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de
+                diferentes figuras geométricas, para ello requiere una aplicación que le facilite el ejercicio
+                solicitándole los valores al estudiante. La aplicación debe permitir que el estudiante seleccione si
+                desea calcular el área de un rectángulo, triángulo o trapecio. No olvide solicitar los datos necesarios
+                para realizar cada cálculo y mostrar su respectivo resultado.
+            </p>
+            <pre>
+                <code>
+
+SubProceso menu <- menuPrincipal()
+	Definir menu Como Entero;
+	Escribir "Define el tipo de triangulo para calcular su Area: ";
+	Escribir "1. Rectangulo";
+	Escribir "2. Triangulo";
+	Escribir "3. Trapecio";
+	Leer menu;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso  pedir <- pedirDato()
+	Definir pedir Como Real;
+	Leer pedir;
+FinSubProceso
+
+SubProceso rectangulo <- trianguloRectangulo(base,altura)
+	Definir rectangulo Como Real;
+	rectangulo <- base * altura;
+	Escribir "SU AREA ES: ", rectangulo;
+FinSubProceso
+
+SubProceso triangulo <- trianguloNormal(base,altura)
+	Definir triangulo Como Real;
+	triangulo <- (base * altura)/2;
+	Escribir "SU AREA ES: ", triangulo;
+FinSubProceso
+
+SubProceso trapecio <- trianguloTrapecio(base1,base2,altura)
+	Definir trapecio Como Real;
+	trapecio <- ((base1+base2)*altura)/2;
+	Escribir "SU AREA ES: ", trapecio;
+FinSubProceso
+
+Proceso punto9
+	Definir baseCorta , baseLarga , alturah , area Como Real;
+	Definir tipoTriangulo Como entero;
+	
+	tipoTriangulo <- menuPrincipal();
+	
+	Segun tipoTriangulo Hacer
+		1:
+			Escribir "DIGITA LA BASE: " Sin Saltar;
+			baseCorta <- pedirDato();
+			Escribir "DIGITA LA ALTURA: " Sin Saltar;
+			alturah <- pedirDato();
+			area <- trianguloRectangulo(baseCorta,alturah);
+		2:
+			Escribir "DIGITA LA BASE: " Sin Saltar;
+			baseCorta <- pedirDato();
+			Escribir "DIGITA LA ALTURA: " Sin Saltar;
+			alturah <- pedirDato();
+			area <- trianguloNormal(baseCorta,alturah);
+		3:
+			Escribir "DIGITA LA BASE CORTA: " Sin Saltar;
+			baseCorta <- pedirDato();
+			Escribir "DIGITA LA BASE LARGA: " Sin Saltar;
+			baseLarga <- pedirDato();
+			Escribir "DIGITA LA ALTURA: " Sin Saltar;
+			alturah <- pedirDato();
+			area <- trianguloTrapecio(baseLarga,baseCorta,alturah);
+		De Otro Modo:
+			Escribir "NO VALIDO";
+	FinSegun
+	
+FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 10</b></p>
+            <p>
+                El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación para llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser mayor al valor que tiene en la cuenta.
+            </p>
+            <pre>
+                <code>
+
+SubProceso menu <- menuPrincipal()
+	Definir menu Como Entero;
+	Escribir "Bienvenido a su Banco fiel";
+	Escribir "¿Que operacion desea realizar?";
+	Escribir  "1. Ingresar monto";
+	Escribir  "2. Retirar monto";
+	Escribir  "3. Consultar saldo";
+	leer menu;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso usuario <- leerUsuario()
+	definir usuario Como Caracter;
+	Escribir "Cual es tu usuario";
+	Leer usuario;
+	Limpiar Pantalla;
+FinSubProceso
+
+Subproceso deposito <- claveUsuario(saldo,consignado)
+	definir deposito como real;
+	Si consignado > 0 Entonces
+		deposito <- saldo + consignado;
+		Escribir "Has consignado: ", consignado , ", Tu Saldo actual es de: ", deposito;
+	SiNo
+		Escribir "MONTO NO VALIDO";
+	FinSi
+FinSubProceso
+
+SubProceso deposito <- retirarDinero(saldo,retirado)
+	Definir deposito Como Entero;
+	Si retirado > 0 Y retirado <= saldo Entonces
+		deposito <- saldo - retirado;
+		Escribir "HAS RETIRADO: ", retirado , ", Tu saldo actual es de: ", deposito;
+	SiNo
+		Escribir "MONTO A RETIRAR NO VALIDO";
+	FinSi
+FinSubProceso
+
+SubProceso consultarSaldo(user,saldo,saldo1,name1,name2)
+	Si user = name1 O user = name2 Entonces
+		Si user = name1 Entonces
+			Escribir "TU SALDO ACTUAL ES DE: ", saldo;
+		SiNo
+			Escribir "TU SALDO ACTUAL ES DE: ", saldo1;
+		FinSi
+	SiNo
+		Escribir "USUARIO NO VALIDO";
+	FinSi
+FinSubProceso
+
+Proceso punto10
+	Definir titular1 , titular2, usuario Como Caracter;
+	Definir saldo1 , saldo2 , retiro , ingreso Como Real;
+	Definir operacion Como Entero;
+	
+	titular1 <- "juan";
+	saldo1 <- 11000;
+	
+	titular2 <- "pablo";
+	saldo2 <- 21000;
+	
+	operacion <- menuPrincipal();
+	Si operacion >= 1 Y operacion <= 3 Entonces
+		Segun operacion hacer
+			1:
+				usuario <- leerUsuario();
+				Si usuario = titular1 O usuario = titular2 Entonces
+					Si usuario = titular1 Entonces
+						Escribir "DIGITE EL MONTO A CONSIGNAR: ";
+						Leer ingreso;
+						saldo1 <- claveUsuario(saldo1,ingreso);
+					SiNo
+						Escribir "DIGITE EL MONTO A CONSIGNAR: ";
+						Leer ingreso;
+						saldo2 <- claveUsuario(saldo2,ingreso);
+					FinSi
+				SiNo
+					Escribir "USUARIO NO VALIDO";
+				FinSi
+			2:
+				usuario <- leerUsuario();
+				Si usuario = titular1 O usuario = titular2 Entonces
+					Si usuario = titular1 Entonces
+						Escribir "DIGITE EL MONTO A RETIRAR: ";
+						Leer retiro;
+						saldo1 <- retirarDinero(saldo1,retiro);
+					SiNo
+						Escribir "DIGITE EL MONTO A RETIRAR: ";
+						Leer retiro;
+						saldo2 <- retirarDinero(saldo2,retiro);
+					FinSi
+					SiNo
+						Escribir "USUARIO NO VALIDO";
+					FinSi
+			3:
+				usuario <- leerUsuario();
+				consultarSaldo(usuario,saldo1,saldo2,titular1,titular2);
+			De Otro Modo:
+				Escribir "ACCION NO VALIDA";
+		FinSegun
+	SiNo
+		Escribir "OPERACION NO VALIDA";
+	FinSi	
+FinProceso
+
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <h1>Taller Ciclos Funciones</h1>
+            <p><b>Punto 6</b></p>
+            <p>
+                Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el sistema debe terminar cuando el usuario así lo indique.
+            </p>
+            <pre>
+                <code>
+
+SubProceso menu <- menuPrincipal()
+	Definir menu Como Entero;
+	Escribir "QUE FUNCION DESEA HACER EN SU AGENDA";
+	Escribir "1. Agregar Nuevo contacto, MAXIMO: 3 CONTACTOS";
+	Escribir "2. Buscar Contacto";
+	Escribir "3. Eliminar contactos";
+	Escribir "4. Salir del sistema";
+	Leer menu;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso name <- pedirNombre()
+	Definir name Como Caracter;
+	Escribir "ESCRIBE EL NOMBRE DEL CONTACTO: " Sin Saltar;
+	Leer name;
+FinSubProceso
+
+SubProceso contact <- pedirNumero()
+	Definir contact Como Real;
+	Escribir "INGRESE EL NUMERO DE TELEFONO: " Sin Saltar;
+	Leer contact;
+FinSubProceso
+
+SubProceso company <- pedirEmpresa()
+	Definir company Como Caracter;
+	Escribir "INGRESE EL NOMBRE DE LA ORGANIZACION: " Sin Saltar;
+	Leer company;
+FinSubProceso
+
+SubProceso mostrarContacto(name,contact,company)
+		Escribir "Nombre: ", name;
+		Escribir "Numero: ", contact;
+		Escribir "Empresa: ", company;
+FinSubProceso
+
+SubProceso eliminar <- borrarDato()
+	Definir eliminar Como Caracter;
+	eliminar <- "";
+FinSubProceso
+
+Proceso punto6
+	Definir contacto, guardado1, guardado2, guardado3 Como Real;
+	Definir nombre, nombreG1, nombreG2, nombreG3 ,  organizacion , organizacionG1, organizacionG2, organizacionG3 Como Caracter;
+	Definir accion Como Entero;
+	Definir continuar Como Logico;
+	
+	continuar <- Verdadero;
+	
+	guardado1 <- 0;
+	guardado2 <- 0;
+	guardado3 <- 0;
+	
+	nombreG1 <- "";
+	nombreG2 <- "";
+	nombreG3 <- "";
+	
+	organizacionG1 <- "";
+	organizacionG2 <- "";
+	organizacionG3 <- "";
+	
+	Repetir
+		
+		accion <- menuPrincipal;
+		Segun accion Hacer
+			1:
+				Si guardado1 <> 0 Y guardado2 <> 0 Y guardado3 <> 0 Entonces
+					Escribir "AGENDA LLENA , PORFAVOR ELIMINE CONTACTOS";
+					Escribir "PRESIONE UNA TECLA PARA CONTINUAR";
+					Esperar Tecla;
+				SiNo
+					contacto <- pedirNumero();
+					Si contacto = guardado1 O contacto = guardado2 O contacto = guardado3 Entonces
+						Escribir "EL NUMERO YA EXISTE";
+						Escribir "PRESIONE UNA TECLA PARA CONTINUAR";
+						Esperar Tecla;
+					SiNo
+						Si guardado1 = 0 Entonces
+							nombreG1 <- pedirNombre();
+							guardado1 <- contacto;
+							organizacionG1 <- pedirEmpresa();
+						SiNo
+							Si guardado2 = 0 Entonces
+								nombreG2 <- pedirNombre();
+								guardado2 <- contacto;
+								organizacionG2 <- pedirEmpresa();
+							SiNo
+								Si guardado3 = 0 Entonces
+									nombreG3 <- pedirNombre();
+									guardado3 <- contacto;
+									organizacionG3 <- pedirEmpresa();
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				Finsi
+					Limpiar Pantalla;
+				2:
+					nombre <- pedirNombre();
+					Si nombre = nombreG1 Entonces
+						mostrarContacto(nombreG1,guardado1,organizacionG1);
+					SiNo
+						Si nombre = nombreG2 Entonces
+							mostrarContacto(nombreG2,guardado2,organizacionG2);
+						SiNo
+							Si nombre = nombreG3 Entonces
+								mostrarContacto(nombreG3,guardado3,organizacionG3);
+							SiNo
+								Escribir "CONTACTO NO ESTA EN LA AGENDA";
+							FinSi
+						FinSi
+					FinSi
+					Escribir "PRESIONE UNA TECLA PARA CONTINUAR";
+					Esperar Tecla;
+					Limpiar Pantalla;
+				3:
+					nombre <- pedirNombre();
+					Si nombre = nombreG1 Entonces
+						Escribir nombre, " SE ELIMINÓ";
+						guardado1 <- 0;
+						nombreG1 <- borrarDato();
+						organizacionG1 <- borrarDato();
+						Escribir "PRESIONE UNA TECLA PARA CONTINUAR";
+						Esperar Tecla;
+						Limpiar Pantalla;
+					SiNo
+						Si nombre = nombreG2 Entonces
+							Escribir nombre, " SE ELIMINÓ";
+							guardado2 <- 0;
+							nombreG2 <- borrarDato();
+							organizacionG2 <- borrarDato();
+							Escribir "PRESIONE UNA TECLA PARA CONTINUAR";
+							Esperar Tecla;
+							Limpiar Pantalla;
+						SiNo
+							Si nombre = nombreG3 Entonces
+								Escribir nombre, " SE ELIMINÓ";
+								guardado3 <- 0;
+								nombreG3 <- borrarDato();
+								organizacionG3 <- borrarDato();
+								Escribir "PRESIONE UNA TECLA PARA CONTINUAR";
+								Esperar Tecla;
+								Limpiar Pantalla;
+							FinSi
+						FinSi
+					Finsi
+				4:	
+					Escribir "DESCONECTADO DEL SISTEMA";
+					continuar <- Falso;
+				De Otro Modo:
+					Escribir "ACCION NO VALIDA";
+			FinSegun
+		Hasta Que continuar = Falso
+FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 7</b></p>
+            <p>
+                El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de ingresar al parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el parqueadero. Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga en presente que el parqueadero solo puede almacenar máximo 5 vehículos.
+            </p>
+            <pre>
+                <code>
+
+SubProceso menu <- menuPrincipal()
+	Definir menu Como Entero;
+	Escribir  "Bienvenido a El parquedero EL GUARDIAN";
+	Escribir "QUE SERVICIO DESEAS REALIZAR";
+	Escribir "1. Ingresar un vehiculo";
+	Escribir "2. Retirar un vehiculo";
+	Escribir "3. Consultar su vehiculo";
+	Escribir "4. Salir del sistema";
+	Leer menu;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso pedir <- pedirNombre()
+	Definir pedir Como Caracter;
+	Escribir "ESCRIBE TU NOMBRE COMPLETO" Sin Saltar;
+	Leer pedir;
+FinSubProceso
+
+SubProceso telefono <- pedirTelefono()
+	Definir telefono Como Real;
+	Escribir "Telefono del dueño" Sin Saltar;
+	Leer telefono;
+FinSubProceso
+
+SubProceso placas <- placaVehiculo()
+	Definir placas Como Caracter;
+	Escribir "Digita la placa: "Sin Saltar;
+	Leer placas;
+FinSubProceso
+
+SubProceso marcas <- marcaVehiculo()
+	Definir marcas Como Caracter;
+	Escribir "Escribe la marca del auto: "Sin Saltar;
+	Leer marcas;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso mostrarVehiculo(marcas,placas,nombres)
+	Escribir "TU VEHICULO: ", marcas;
+	Escribir "PLACAS: ", placas;
+	Escribir "DUEÑO: ", nombres;
+	Escribir "HA SIDO REGISTRADO";
+	Escribir "PRESIONA UNA TECLA PARA CONTINUAR";
+	Esperar Tecla;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso vacio <- asignarVacio()
+	Definir vacio Como Caracter;
+	vacio <- "VACIO";
+FinSubProceso
+
+SubProceso asignado <- noAsignar()
+	Definir asignado Como Caracter;
+	asignado <- "NO ASIGNADO";
+FinSubProceso
+
+SubProceso retirarCoche(nombres,placas)
+	Escribir "El Vehiculo de: ", nombres , " Placa: ", placas, " HA SIDO RETIRADO DEL PARQUEADERO";
+	Escribir "PRESIONA UNA TECLA PARA CONTINUAR";
+	Esperar Tecla;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso menuCarro <- menuVehiculos(marcas1,marcas2,marcas3,marcas4,marcas5,placas1,placas2,placas3,placas4,placas5)
+	Definir menuCarro Como Entero;
+	Escribir "VEHICULO DESEAS RETIRAR DE NUESTRO PARQUEARO: ";
+	Escribir "1. ",marcas1, " PLACA: ", placas1;
+	Escribir "2. ",marcas2, " PLACA: ", placas2;
+	Escribir "3. ",marcas3, " PLACA: ", placas3;
+	Escribir "4. ",marcas4, " PLACA: ", placas4;
+	Escribir "5. ",marcas5, " PLACA: ", placas5;
+	Leer menuCarro;
+FinSubProceso
+
+SubProceso alerta()
+	Escribir "EL PARQUEADERO ESTA VACIO";
+	Escribir "PRESIONA UNA TECLA PARA CONTINUAR";
+	Esperar Tecla;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubAlgoritmo alerta1()
+	Escribir "PARQUEADERO LLENO, NO TENEMOS LUGAR DISPONIBLE";
+	Escribir "Gracias por su visita";
+	Esperar 2 segundos;
+	Limpiar Pantalla;
+FinSubAlgoritmo
+
+SubProceso alerta2()
+	Escribir "Operacion No valida";
+	Esperar 2 segundos;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso vehiculo(marcas)
+	Escribir "TU VEHICULO: ", marcas, " SE ENCUENTRA EN NUESTRO TALLER";
+FinSubProceso
+
+Proceso punto7
+	Definir eleccion,lugar Como Entero;
+	Definir nombre, placa, marca,buscador Como Caracter;
+	Definir telefono Como Real;
+	Definir continuar Como Logico;
+	
+	Dimension nombre[5], placa[5], marca[5], telefono[5], lugar[5];
+	
+	continuar <- Verdadero;
+	
+	nombre[0] <- "NO ASIGNADO";
+	telefono[0] <- 0;
+	placa[0] <- "VACIO";
+	marca[0] <- "VACIO";
+	lugar[0] <- 0;
+	
+	nombre[1] <- "NO ASIGNADO";
+	telefono[1] <- 0;
+	placa[1] <- "VACIO";
+	marca[1] <- "VACIO";
+	lugar[1] <- 0;
+	
+	nombre[2] <- "NO ASIGNADO";
+	telefono[2] <- 0;
+	placa[2] <- "VACIO";
+	marca[2] <- "VACIO";
+	lugar[2] <- 0;
+	
+	nombre[3] <- "NO ASIGNADO";
+	telefono[3] <- 0;
+	placa[3] <- "VACIO";
+	marca[3] <- "VACIO";
+	lugar[3] <- 0;
+	
+	nombre[4] <- "NO ASIGNADO";
+	telefono[4] <- 0;
+	placa[4] <- "VACIO";
+	marca[4] <- "VACIO";
+	lugar[4] <- 0;
+	
+	Mientras continuar = Verdadero Hacer
+		eleccion <- menuPrincipal();
+		
+		Segun eleccion Hacer
+			1:
+				Si lugar[0] = 1 Y lugar[1]  = 1 Y lugar[2]  = 1 Y lugar[3]  = 1 Y lugar[4]  = 1 Entonces
+					alerta1();
+				SiNo
+					Si lugar[0] = 0 Entonces
+						nombre[0] <- pedirNombre();
+						telefono[0] <- pedirTelefono();
+						placa[0] <- placaVehiculo();
+						marca[0] <- MarcaVehiculo();
+						lugar[0] <- 1;
+						mostrarVehiculo(marca[0],placa[0],nombre[0]);
+					SiNo
+						Si lugar[1] = 0 Entonces
+							nombre[1] <- pedirNombre();
+							telefono[1] <- pedirTelefono();
+							placa[1] <- placaVehiculo();
+							marca[1] <- MarcaVehiculo();
+							lugar[1] <- 1;
+							mostrarVehiculo(marca[1],placa[1],nombre[1]);
+						SiNo
+							Si lugar[2] = 0 Entonces
+								nombre[2] <- pedirNombre();
+								telefono[2] <- pedirTelefono();
+								placa[2] <- placaVehiculo();
+								marca[2] <- MarcaVehiculo();
+								lugar[2] <- 1;
+								mostrarVehiculo(marca[2],placa[2],nombre[2]);
+							SiNo
+								Si lugar[3] = 0 Entonces
+									nombre[3] <- pedirNombre();
+									telefono[3] <- pedirTelefono();
+									placa[3] <- placaVehiculo();
+									marca[3] <- MarcaVehiculo();
+									lugar[3] <- 1;
+									mostrarVehiculo(marca[3],placa[3],nombre[3]);
+								Sino
+									Si Lugar[4] = 0 Entonces
+										nombre[4] <- pedirNombre();
+										telefono[4] <- pedirTelefono();
+										placa[4] <- placaVehiculo();
+										marca[4] <- MarcaVehiculo();
+										lugar[4] <- 1;
+										mostrarVehiculo(marca[4],placa[4],nombre[4]);
+									FinSi
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			2:
+				Si lugar[0] = 0 Y lugar[1]  = 0 Y lugar[2]  = 0 Y lugar[3]  = 0 Y lugar[4]  = 0 Entonces
+					alerta();
+				SiNo
+					eleccion <- menuVehiculos(marca[0],marca[1],marca[2],marca[3],marca[4], placa[0],placa[1],placa[2],placa[3],placa[4]);
+					Segun eleccion Hacer
+						1:
+							Si nombre[0] = "NO ASIGNADO" Y placa[0] = "VACIO" Entonces
+								Escribir "NO HAY VEHICULO PARA RETIRAR";
+							SiNo
+								retirarCoche(nombre[0],placa[0]);
+								nombre[0] <- noAsignar();
+								telefono[0] <- 0;
+								placa[0] <- asignarVacio();
+								marca[0] <- asignarVacio();
+								lugar[0] <- 0;
+							FinSi
+						2:
+							Si nombre[1] = "NO ASIGNADO" Y placa[1] = "VACIO" Entonces
+								Escribir "NO HAY VEHICULO PARA RETIRAR";
+							SiNo
+								retirarCoche(nombre[1],placa[1]);
+								nombre[1] <- noAsignar();
+								telefono[1] <- 0;
+								placa[1] <- asignarVacio();
+								marca[1] <- asignarVacio();
+								lugar[1] <- 0;
+							FinSi
+						3:
+							Si nombre[2] = "NO ASIGNADO" Y placa[2] = "VACIO" Entonces
+								Escribir "NO HAY VEHICULO PARA RETIRAR";
+							SiNo
+								retirarCoche(nombre[2],placa[2]);
+								nombre[2] <- noAsignar();
+								telefono[2] <- 0;
+								placa[2] <- asignarVacio();
+								marca[2] <- asignarVacio();
+								lugar[2] <- 0;
+							FinSi
+						4:
+							Si nombre[3] = "NO ASIGNADO" Y placa[3] = "VACIO" Entonces
+								Escribir "NO HAY VEHICULO PARA RETIRAR";
+							SiNo
+								retirarCoche(nombre[3],placa[3]);
+								nombre[3] <- noAsignar();
+								telefono[3] <- 0;
+								placa[3] <- asignarVacio();
+								marca[3] <- asignarVacio();
+								lugar[3] <- 0;
+							FinSi
+						5:
+							Si nombre[4] = "NO ASIGNADO" Y placa[4] = "VACIO" Entonces
+								Escribir "NO HAY VEHICULO PARA RETIRAR";
+							SiNo
+								retirarCoche(nombre[4],placa[4]);
+								nombre[4] <- noAsignar();
+								telefono[4] <- 0;
+								placa[4] <- asignarVacio();
+								marca[4] <- asignarVacio();
+								lugar[4] <- 0;
+							FinSi
+						De Otro Modo:
+					FinSegun
+				FinSi
+			3:
+				Escribir "ESCRIBE LA PLACA" Sin Saltar;
+				Leer buscador;
+				
+				Si buscador = placa[0] Entonces
+					vehiculo(marca[0]);
+				SiNo
+					Si buscador = placa[1] Entonces
+						vehiculo(marca[1]);
+					SiNo
+						Si buscador = placa[2] Entonces
+							vehiculo(marca[2]);
+						SiNo
+						Si	buscador = placa[3] Entonces
+							vehiculo(marca[3]);
+							SiNo
+								Si buscador = placa[4] Entonces
+									vehiculo(marca[4]);
+								SiNo
+									Escribir "LA PLACA: ", buscador, " NO REGISTRA EN NUESTRO SISTEMA";
+									Escribir "PRESIONA UNA TECLA PARA CONTINUAR";
+									Esperar Tecla;
+									Limpiar Pantalla;
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			4:
+				Escribir "GRACIAS POR VISITARNOS";
+				Esperar 2 segundos;
+				continuar <- Falso;
+			De Otro Modo:
+				alerta2();
+		FinSegun
+	FinMientras
+FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 8</b></p>
+            <p>
+                La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso al curso, consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad.
+            </p>
+            <pre>
+                <code>
+
+SubProceso menu <- menuPrincipal()
+	Definir menu Como Entero;
+	Escribir "Bienvenido al sistema de la Escuela Automovilistica EL MAESTRO";
+	Escribir "Menú";
+	Escribir "1. REGISTRAR INGRESO AL CURSO";
+	Escribir "2. Consultar usuarios En Curso";
+	Escribir "3. Consultar aprobados";
+	Escribir "4. Salir del sistema";
+	Leer menu;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso alertaNovalido()
+	Escribir "ACCION NO VALIDA, VUELVA A INTENTAR";
+	Esperar 2 segundos;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso user <- capturarUsuario()
+	Definir user Como Caracter;
+	Escribir "ESCRIBE EL NOMBRE COMPLETO DEL USUARIO A REGISTRAR" Sin Saltar;
+	Leer user;
+	Escribir "REGISTRO EN CURSO COMPLETO";
+	Esperar 2 Segundos;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso mostrarRegistrados(clase,user1,user2,user3,user4,user5,user6,user7,user8)
+	SI user1 = "NO REGISTRADO" Y user2 = "NO REGISTRADO" Y user3 = "NO REGISTRADO" Y user4 = "NO REGISTRADO" Y user5 = "NO REGISTRADO" Y user6 = "NO REGISTRADO" Y user7 = "NO REGISTRADO" Y user8 = "NO REGISTRADO" Entonces
+		Escribir "CURSO VACIO";
+	SiNo
+		Escribir "LOS SIGUIENTES USUARIOS PERTENECEN AL CURSO: ", clase;
+		Si user1 <> "NO REGISTRADO" Entonces
+			Escribir user1;
+		FinSi
+		Si user2 <> "NO REGISTRADO" Entonces
+			Escribir user2;
+		FinSi
+		Si user3 <> "NO REGISTRADO" Entonces
+			Escribir user3;
+		FinSi
+		Si user4 <> "NO REGISTRADO" Entonces
+			Escribir user4;
+		FinSi
+		Si user5 <> "NO REGISTRADO" Entonces
+			Escribir user5;
+		FinSi
+		Si user6 <> "NO REGISTRADO" Entonces
+			Escribir user6;
+		FinSi
+		Si user7 <> "NO REGISTRADO" Entonces
+			Escribir user7;
+		FinSi
+		Si user8 <> "NO REGISTRADO" Entonces
+			Escribir user8;
+		FinSi
+	FinSi
+	Escribir "Presiona una tecla para continuar";
+	Esperar Tecla;
+	Limpiar Pantalla;
+FinSubProceso
+
+SubProceso mostrarAprobados(clase,user1,user2,user3,user4,user5,user6,user7,user8)
+	SI user1 = "NO REGISTRADO" Y user2 = "NO REGISTRADO" Y user3 = "NO REGISTRADO" Y user4 = "NO REGISTRADO" Y user5 = "NO REGISTRADO" Y user6 = "NO REGISTRADO" Y user7 = "NO REGISTRADO" Y user8 = "NO REGISTRADO" Entonces
+		Escribir "CURSO VACIO, NO HAY ESTUDIANTES";
+		Esperar 3 segundos;
+		Limpiar Pantalla;
+	SiNo
+		SI user2 = "NO REGISTRADO" Y user5 = "NO REGISTRADO" Y user6 = "NO REGISTRADO" Y user8 = "NO REGISTRADO" Entonces
+			
+			Escribir "NO HAY APROBADOS";
+			Esperar 2 Segundos;
+			Limpiar Pantalla;
+		SiNo
+			Escribir "LOS SIGUIENTES ESTUDIANTES HAN APROBADO EL CURSO: ",clase;
+			Si user2 <> "NO REGISTRADO" Entonces
+				Escribir user2;
+			FinSi
+			Si user5 <> "NO REGISTRADO" Entonces
+				Escribir user5;
+			FinSi
+			Si user6 <> "NO REGISTRADO" Entonces
+				Escribir user6;
+			FinSi
+			Si user8 <> "NO REGISTRADO" Entonces
+				Escribir user8;
+			FinSi
+			Escribir "Pulsa una tecla para continuar";
+			Esperar Tecla;
+			Limpiar Pantalla;
+		FinSi
+	FinSi
+FinSubProceso
+
+Proceso punto8
+	Definir usuario, curso Como Caracter;
+	Definir user Como Caracter;
+	Definir eleccion,index Como Entero;
+	Definir continuar Como Logico;
+	Dimension user[8];
+	
+	continuar <- Verdadero;
+	curso <- "ENSEÑANZA AUTOMOVILISTICA";
+	
+	Para index <- 0 hasta 7 Con Paso 1 Hacer
+		user[index] <- "NO REGISTRADO";
+	FinPara
+	
+	
+	Repetir
+		eleccion <- menuPrincipal();
+		Segun eleccion Hacer
+			1:
+				SI user[0] <> "NO REGISTRADO" Y user[1] <> "NO REGISTRADO" Y user[2] <> "NO REGISTRADO" Y user[3] <> "NO REGISTRADO" Y user[4] <> "NO REGISTRADO" Y user[5] <> "NO REGISTRADO" Y user[6] <> "NO REGISTRADO" Y user[7] <> "NO REGISTRADO" Entonces
+					Escribir "CURSO LLENO , NO PUEDES REGISTRAR MAS USUARIOS";
+					Esperar 2 Segundos;
+					Limpiar Pantalla;
+				SiNo
+					si user[0] = "NO REGISTRADO" Entonces
+						user[0] <- capturarUsuario();
+					SiNo
+						si user[1] = "NO REGISTRADO" Entonces
+							user[1] <- capturarUsuario();
+						SiNo
+							si user[2] = "NO REGISTRADO" Entonces
+								user[2] <- capturarUsuario();
+							SiNo
+								si user[3] = "NO REGISTRADO" Entonces
+									user[3] <- capturarUsuario();;
+								SiNo
+									si user[4] = "NO REGISTRADO" Entonces
+										user[4] <- capturarUsuario();
+									SiNo
+										si user[5] = "NO REGISTRADO" Entonces
+											user[5] <- capturarUsuario();
+										SiNo
+											si user[6] = "NO REGISTRADO" Entonces
+												user[6] <- capturarUsuario();
+											SiNo
+												si user[7] = "NO REGISTRADO" Entonces
+													user[7] <- capturarUsuario();
+												FinSi
+											FinSi
+										FinSi
+									FinSi
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			2:
+				mostrarRegistrados(curso,user[0],user[1],user[2],user[3],user[4],user[5],user[6],user[7]);
+			3:
+				mostrarAprobados(curso,user[0],user[1],user[2],user[3],user[4],user[5],user[6],user[7]);
+			4:
+				Escribir "DESCONECTADO DEL SISTEMA";
+				continuar <- Falso;
+			De Otro Modo:
+				alertaNovalido();
+		FinSegun
+	Hasta Que continuar = Falso
+FinProceso
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <h1>Taller Arreglos</h1>
+            <p><b>Punto 1</b></p>
+            <p>
+                Crear un vector de tipo Entero con 5 posiciones, llenarlo con información solicitada al usuario. Después de recoger toda la información, se requiere imprimir el índice de cada posición en el arreglo con su valor de la siguiente manera: <br>
+                [0] = 55 <br>
+                [1] = 99  <br>
+                [2] = 11 <br>
+                [3] = 56 <br>
+                [4] = 69
+            </p>
+            <pre>
+                <code>
+
+                SubProceso valor1 <- retornarValor1()
+                    Definir valor1 Como Entero;
+                    valor1 <- 55;
+                FinSubProceso
+                
+                SubProceso valor2 <- retornarValor2()
+                    Definir valor2 Como Entero;
+                    valor2 <- 99;
+                FinSubProceso
+                
+                SubProceso valor3 <- retornarValor3()
+                    Definir valor3 Como Entero;
+                    valor3 <- 11;
+                FinSubProceso
+                
+                SubProceso valor4 <- retornarValor4()
+                    Definir valor4 Como Entero;
+                    valor4 <- 56;
+                FinSubProceso
+                
+                SubProceso valor5 <- retornarValor5()
+                    Definir valor5 Como Entero;
+                    valor5 <- 69;
+                FinSubProceso
+                
+                SubProceso imprimirNumeros(vector,indice)
+                    Escribir "[",indice,"] =" , " ",vector;
+                FinSubProceso
+                
+                Proceso punto1
+                    Definir vector,indice Como entero;
+                    Dimension vector[5];
+                    
+                    vector[0] <- retornarValor1();
+                    vector[1] <- retornarValor2();
+                    vector[2] <- retornarValor3();
+                    vector[3] <- retornarValor4();
+                    vector[4] <- retornarValor5();
+                    
+                    Para indice <- 0 Hasta 4 Con Paso 1 Hacer
+                        imprimirNumeros(vector[indice],indice);
+                    FinPara
+                FinProceso
+                
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 2</b></p>
+            <p>
+                Crear un arreglo de números enteros de 20 posiciones, el cual, debe ser llenado con números aleatorios entre 1 y 100; después de haber llenado dicho arreglo, se debe volver a recorrer utilizando un ciclo diferente al que se usó para llenarse e imprimir los números pares e impares. Ejemplo
+                Números pares: 2, 4, 6, 8, 10 <br>
+                Números impares: 1, 3, 5, 7, 9
+            </p>
+            <pre>
+                <code>
+                SubProceso random <- numeroRandom()
+                    definir random Como Entero;
+                    random <- azar(100)+1;
+                FinSubProceso
+                
+                SubProceso par(array)
+                    Si array % 2 = 0 Entonces
+                        Escribir array, " " Sin Saltar;
+                    Finsi
+                FinSubProceso
+                
+                SubProceso impar(array)
+                    si array % 2 <> 0 Entonces
+                        Escribir array, " " Sin Saltar;
+                    FinSi
+                FinSubProceso
+                
+                SubProceso escribirTitulo(titulo)
+                    Escribir titulo Sin Saltar;
+                FinSubProceso
+                
+                Proceso punto2
+                    Definir numero1, indice, random Como Entero;
+                    Definir titulo1,titulo2 Como Caracter;
+                    Dimension numero1[20];
+                    
+                    titulo1 <- "Numeros pares: ";
+                    titulo2 <- "Numeros impares: ";
+                    
+                    escribirTitulo(titulo1);
+                    Para indice <- 0 Hasta 19 Con Paso 1 Hacer
+                        numero1[indice] <- numeroRandom();
+                        par(numero1[indice]);
+                    FinPara
+                    
+                    Escribir "";
+                    
+                    escribirTitulo(titulo2);
+                    Para indice <- 0 Hasta 19 Con Paso 1 Hacer
+                        impar(numero1[indice]);
+                    FinPara
+                FinProceso
+                
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 3</b></p>
+            <p>
+                Imprimir los números primos del 1 al 1000, el resultado debe ser buscado de forma matemática.
+            </p>
+            <pre>
+                <code>
+                SubProceso acumular <- acumularValor(algo) 
+                    Definir acumular como entero;
+                    acumular <- algo + 1;
+                FinSubProceso
+                
+                SubProceso contadorPrimos <- primos(number,cero)
+                    Definir contadorPrimos Como Entero;
+                    contadorPrimos <- number + cero;
+                FinSubProceso
+                
+                SubProceso imprimirValor(number)
+                    Escribir number , " " Sin Saltar;
+                FinSubProceso
+                
+                SubAlgoritmo reset <- reiniciarContador()
+                    Definir reset Como Entero;
+                    reset <- 0;
+                FinSubAlgoritmo
+                
+                Proceso punto3
+                    Definir primo, dividir, posicion, contador Como Entero;
+                    Dimension primo[1000];
+                    
+                    contador <- 0;
+                    Para posicion <- 0 hasta 999 Con Paso 1 Hacer
+                        primo[posicion] <- acumularValor(posicion);
+                        Para dividir <- 1 Hasta posicion + 1 Hacer
+                            si primo[posicion] % dividir = 0 Entonces
+                                contador <- primos(1,contador);
+                            FinSi
+                        FinPara
+                        si contador = 2 Entonces
+                        imprimirValor(primo[posicion]);
+                        FinSi
+                        si contador > 2 Entonces
+                        contador <- reiniciarContador();
+                        FinSi
+                    FinPara
+                FinProceso
+                
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 4</b></p>
+            <p>
+                Dada la siguiente matriz bidimensional, el cual debe de quemar en el código <br>
+                01 02 03 04 05  <br>
+                06 07 08 09 10 <br>
+                11 12 13 14 15 <br>
+                16 17 18 19 20 <br>
+                Utilizando el conocimiento adquirido, a excepción de hacerlo de forma manual, imprima la siguiente matriz bidimensional. <br>
+                01 02 03 04 05 <br>
+                10 09 08 07 06 <br>
+                11 12 13 14 15 <br>
+                20 19 18 17 16
+            </p>
+            <pre>
+                <code>
+                SubProceso tituloMatriz(numero1)
+                    Escribir "MATRIZ ",numero1;
+                FinSubProceso
+                
+                SubProceso convertir <- volverTexto(avanza,variable)
+                    definir convertir Como Caracter;
+                    convertir <- ConvertirATexto(avanza + variable);
+                FinSubProceso
+                
+                SubProceso concatena <- concatenarCero(valorNumero)
+                    Definir concatena Como Caracter;
+                    concatena <- Concatenar("0",valorNumero);
+                FinSubProceso
+                
+                SubProceso imprimirNumero(matrizVariable)
+                    Escribir matrizVariable, " " Sin Saltar;
+                FinSubProceso
+                
+                SubProceso llevar <- llevarAMatriz(llevarNumero)
+                    Definir llevar Como caracter;
+                    llevar <- llevarNumero;
+                FinSubProceso
+                
+                Proceso punto4
+                    Definir fila, columna Como Entero;
+                    Definir matriz1, matriz2 Como caracter;
+                    Definir x,z Como Caracter;
+                    Dimension matriz1[4,5];
+                    Dimension matriz2[4,5];
+                    //[filas,columnas]
+                    
+                
+                    tituloMatriz("1");
+                    
+                    Para fila <- 0 Hasta 3 Con Paso 1 Hacer
+                        Para columna <- 0 Hasta 4 Con Paso 1 Hacer
+                            Si fila = 0 Entonces
+                                x <- volverTexto(columna,1);
+                                matriz1[fila,columna] <- concatenarCero(x);
+                                imprimirNumero(matriz1[fila,columna]);
+                            FinSi
+                            Si fila = 1 Entonces
+                                x <- volverTexto(columna,6);
+                                Si columna = 4 Entonces
+                                    matriz1[fila,columna] <- llevarAMatriz(x);
+                                    imprimirNumero(matriz1[fila,columna]);
+                                SiNo
+                                    matriz1[fila,columna] <- concatenarCero(x);
+                                    imprimirNumero(matriz1[fila,columna]);
+                                FinSi
+                            FinSi
+                            
+                            Si fila = 2 Entonces
+                                x <- volverTexto(columna,11);
+                                matriz1[fila,columna] <- llevarAMatriz(x);
+                                imprimirNumero(matriz1[fila,columna]);
+                            FinSi
+                            
+                            Si fila = 3 Entonces
+                                x <- volverTexto(columna,16);
+                                matriz1[fila,columna] <- llevarAMatriz(x);
+                                imprimirNumero(matriz1[fila,columna]);
+                            FinSi
+                        FinPara
+                        Escribir "";
+                    FinPara
+                    
+                    Escribir "";
+                    
+                    tituloMatriz("2");	
+                    
+                    Para fila <- 0 Hasta 3 Con Paso 1 Hacer
+                        
+                        Para columna <- 0 Hasta 4 Con Paso 1 Hacer
+                            
+                            Si fila = 0 Entonces
+                                x <- volverTexto(columna,1);
+                                matriz1[fila,columna] <- concatenarCero(x);
+                                imprimirNumero(matriz1[fila,columna]);
+                            FinSi
+                            
+                            Si fila = 1 Y columna = 0 Entonces
+                                x <- volverTexto(columna,10);
+                                matriz1[fila,columna] <- llevarAMatriz(x);
+                                imprimirNumero(matriz1[fila,columna]);
+                            FinSi
+                            
+                            Si fila = 1 Y columna > 0 Entonces
+                                x <- volverTexto(-columna,10);
+                                matriz1[fila,columna] <- concatenarCero(x);
+                                imprimirNumero(matriz1[fila,columna]);
+                            FinSi
+                            
+                            Si fila = 2 Entonces
+                                x <- volverTexto(columna,11);
+                                matriz1[fila,columna] <- llevarAMatriz(x);
+                                imprimirNumero(matriz1[fila,columna]);
+                            FinSi
+                            
+                            Si fila = 3 Entonces
+                                x <- volverTexto(-columna,20);
+                                matriz1[fila,columna] <- llevarAMatriz(x);
+                                imprimirNumero(matriz1[fila,columna]);
+                            FinSi
+                        FinPara
+                        Escribir "";
+                    FinPara
+                FinProceso                
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <p><b>Punto 5</b></p>
+            <p>
+                Se debe de imprimir el siguiente cuadro <br>
+                <img src="images/tabla.png"> <br>
+                El usuario deberá insertar la fila y columna de la cual desea ver el resultado, el resultado de cada celda debe estar previamente calculado en una matriz bidimensional la cual cada resultado obedecerá a la fila y columna insertada por el usuario.
+            </p>
+            <pre>
+                <code>
+
+SubProceso imprimir()
+	Escribir "                                              COLUMNAS ";
+	Escribir "          [0]      [1]      [2]      [3]      [4]      [5]      [6]      [7]      [8]      [9]";
+FinSubProceso
+
+SubProceso convertir <- volverTexto(avanza)
+	definir convertir Como Caracter;
+	convertir <- ConvertirATexto(avanza + 1);
+FinSubProceso
+
+SubProceso llevar <- llevarAMatriz(numero1,numero2)
+	Definir llevar Como entero;
+	llevar <- (numero1+1) * (numero2+1);
+FinSubProceso
+
+SubAlgoritmo imprimirMatriz(fila,w)
+	Escribir w,"  [", fila, "]   " Sin Saltar;
+FinSubAlgoritmo
+
+SubProceso imprimirMultiplicacion(valor1,valor2,valor3)
+	Escribir valor1, " X ", valor2 , valor3 Sin Saltar;
+FinSubProceso
+
+SubProceso pedir <- pedirValor(texto1)
+	Definir pedir Como Entero;
+	Escribir "ESCRIBA LA ",texto1 Sin Saltar;
+	Leer pedir;
+FinSubProceso
+
+SubProceso imprimirResultado(valor1)
+	Escribir "Resultado = ", valor1;
+FinSubProceso
+
+SubProceso alerta()
+	Escribir "RANGO NO VALIDO, MATRIX DE 10X10";
+FinSubProceso
+
+Proceso punto5
+	Definir x,z,w Como Caracter;
+	Definir matriz, fila , columna, fila1,columna1 Como Entero;
+	Definir seguir Como Logico;
+	Dimension w[10];
+	Dimension  matriz[10,10];
+	//[filas,columnas]
+	
+	w[0] <- " ";
+	w[1] <- " ";
+	w[2] <- "F";
+	w[3] <- "I";
+	w[4] <- "L";
+	w[5] <- "A";
+	w[6] <- "S";
+	w[7] <- " ";
+	w[8] <- " ";
+	w[9] <- " ";
+	
+	seguir <- Verdadero;
+	
+	imprimir();
+	Para fila <- 0 Hasta 9 Con Paso 1 Hacer
+		imprimirMatriz(fila,w[fila]);
+		Para columna <- 0 Hasta 9 Con Paso 1 Hacer
+			x <- volverTexto(fila);
+			z <- volverTexto(columna);
+			matriz[fila,columna] <- llevarAMatriz(fila,columna);
+			SI fila = 9 Entonces
+				imprimirMultiplicacion(x,z,"   ");
+			SiNo
+				imprimirMultiplicacion(x,z,"    " );
+			FinSi
+		FinPara
+		Escribir "";
+	FinPara
+	Escribir "";
+	Repetir
+		fila1 <- pedirValor("FILA");
+		columna1 <- pedirValor("COLUMNA");
+		si fila1 < 10 Y columna1 < 10 Entonces
+			imprimirResultado(matriz[fila1,columna1]);
+		SiNo
+			alerta();
+		FinSi
+	Hasta Que seguir = Falso
+FinProceso
+
+                </code>
+            </pre>
+        </section>
+    </div>
+</body>
+
+</html>

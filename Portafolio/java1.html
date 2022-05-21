@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/talleresPseint.css">
+    <title>Taller 1</title>
+</head>
+<body>
+    <nav>
+        <a href="java2.html">TALLER 2</a>
+        <a href="java3.html">TALLER 3</a>
+        <a href="java4.html">TALLER 4</a>
+        <a href="portafolio.html">VOLVER A INICIO</a>
+    </nav>
+    <div class="contenedor">
+        <section>
+            <p><b>Punto 1</b></p>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller1/Punto1.java">GitHub</a>
+        <p>Realizar un programa el cual solicite su nombre y apellidos.</p>
+        <pre>
+            <code>
+                package Taller1;
+                import java.util.Scanner;
+                
+                public class Punto1 {
+                    public static void main(String[] args) {
+                        String nombre;
+                        Scanner input = new Scanner(System.in);
+                        System.out.println("Escriba su nombre");
+                        nombre = input.nextLine();
+                        System.out.println("Su nombre es: " + nombre);
+                    }
+                }               
+
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <p><b>Punto 2</b></p>
+        <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller1/Punto2.java">GitHub</a>
+    <p>Realizar un programa el cual solicite su nombre, apellidos, edad y estatura.</p> 
+    <pre>
+        <code>
+            package Taller1;
+            import java.util.Scanner;
+            
+            public class Punto2 {
+                public static void main(String[] args) {
+                    String nombre, apellidos;
+                    int edad;
+                    double estatura;
+            
+                    System.out.println("CUAL ES TU NOMBRE");
+                    Scanner input = new Scanner(System.in);
+                    nombre = input.nextLine();
+                    System.out.println("CUALES SON SUS APELLIDOS");
+                    apellidos = input.nextLine();
+                    System.out.println("CUAL ES TU EDAD");
+                    edad = input.nextInt();
+                    System.out.println("CUAL ES TU ESTATURA EN CM");
+                    estatura = input.nextDouble();
+            
+                    System.out.println("Su nombre es: " + nombre + " " + apellidos + " Tienes una edad de " + edad + " años");
+                    System.out.println("Mides: " + estatura + " CMs");
+                }
+            }
+        </code>
+    </pre>
+    </section>
+
+    <section>
+    <p><b>Punto 3</b></p>
+    <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller1/Punto3.java">GitHub</a>
+    <p>Realizar un programa el cual solicite su nombre y apellidos, también debe capturar nombre y apellidos de su padre y madre. Al finalizar debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo], soy hijo de [Nombre de la Madre] y [Nombre del Padre].</p>
+    <pre>
+    <code>
+        package Taller1;
+        import java.util.Scanner;
+        
+        public class Punto3 {
+            public static void main(String[] args) {
+                String nombre , apellidos;
+                String nombreM , apellidosM;
+                String nombreP, apellidosP;
+                Scanner input = new Scanner(System.in);
+                Scanner input1 = new Scanner(System.in);
+        
+                System.out.println("DATOS DEL HIJO");
+                System.out.println("NOMBRE");
+                nombre = input.nextLine();
+                System.out.println("APELLIDOS");
+                apellidos = input.nextLine();
+        
+                System.out.println("DATOS DE LA MADRE");
+                System.out.println("NOMBRE");
+                nombreM = input.nextLine();
+                System.out.println("APELLIDOS");
+                apellidosM = input.next();
+        
+                System.out.println("DATOS DEL PADRE");
+                System.out.println("NOMBRE");
+                nombreP = input1.nextLine();
+                System.out.println("APELLIDOS");
+                apellidosP = input1.nextLine();
+        
+                System.out.println("Yo: "+ nombre + " " + apellidos + " Soy hijo de " + nombreM + " " + apellidosM + " y " + nombreP + " " + apellidosP);
+            }
+        }
+    </code>
+    </pre>
+    
+    </section>
+
+    <section>
+        <p><b>Punto 4</b></p>
+        <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller1/Punto4.java">GitHub</a>
+        <p>Realizar un programa el cual solicite el nombre de una ciudad capital y el país. Al finalizar debe imprimir en pantalla el siguiente mensaje "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del País]</p>
+        <pre>
+        <code>
+            package Taller1;
+            import java.util.Scanner;
+            
+            public class Punto4 {
+                public static void main(String[] args) {
+                    String ciudad , pais;
+                    Scanner input = new Scanner(System.in);
+            
+                    System.out.println("ESCRIBA EL NOMBRE DE UNA PAIS");
+                    pais = input.nextLine();
+                    System.out.println("ESCRIBA LA CAPITAL DEL PAIS");
+                    ciudad = input.nextLine();
+                    System.out.println("LA CIUDAD " + ciudad + " ES LA CAPITAL DEL PAIS " + pais);
+                }
+            }
+        </code>
+        </pre>
+
+        </section>
+
+        <section>
+            <h1><b>Punto 5</b></h1>
+            <a href="https://github.com/jutaga/Cantera-1/blob/TalleresJAVA/src/Taller1/Punto5.java">GitHub</a>
+            <p>Realizar un programa el cual solicite el nombre de su mascota, edad de la mascota, el tipo de mascota y su nombre completo. Al finalizar el sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de Mascota] es un(a) [Tipo de Mascota], el cual, tiene [Edad de la Mascota] años de edad y [Nombre Completo] es actualmente su dueño(a).</p>
+            <pre>
+            <code>
+                package Taller1;
+                import java.util.Scanner;
+                
+                public class Punto5 {
+                    public static void main(String[] args) {
+                        String mascota , raza, nombre;
+                        int edad;
+                        Scanner input = new Scanner(System.in);
+                        Scanner input1 = new Scanner(System.in);
+                
+                        System.out.println("CUAL ES SU NOMBRE");
+                        nombre = input.nextLine();
+                        System.out.println("COMO SE LLAMA SU MASCOTA");
+                        mascota = input.nextLine();
+                        System.out.println("CUAL ES LA EDAD DE SU MASCOTA");
+                        edad = input1.nextInt();
+                        System.out.println("CUAL ES LA RAZA DE LA MASCOTA");
+                        raza = input.nextLine();
+                        System.out.println(mascota + " es un(a) " + raza + " el/la cual tiene " + edad + " Anios de edad y " + nombre + " es su duenio");
+                    }
+                }           
+            </code>
+            </pre>
+            </section>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/talleresPseint.css">
+    <title>Taller 1</title>
+</head>
+<body>
+    <nav>
+        <a href="PseInt2.html">TALLER 2</a>
+        <a href="PseInt3.html">TALLER 3</a>
+        <a href="PseInt4.html">TALLER 4</a>
+        <a href="PseInt5.html">TALLER 5</a>
+        <a href="portafolio.html">VOLVER A INICIO</a>
+    </nav>
+
+    <div class="contenedor">
+        <section>
+            <p><b>Punto 1</b></p>
+        <p>Realizar un programa el cual solicite su nombre y apellidos.</p>
+        <pre>
+            <code>
+            Proceso Punto1
+	    Definir nombre Como Caracter;
+	
+	    Escribir "¿CUAL ES SU NOMBRE COMPLETO?";
+	    Leer nombre;
+	
+	    Limpiar Pantalla;
+	
+	    Escribir "SU NOMBRE ES " , nombre;
+            FinProceso
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/p0eY-hL6oQA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <p><b>Punto 2</b></p>
+    <p>Realizar un programa el cual solicite su nombre, apellidos, edad y estatura.</p> 
+    <pre>
+        <code>
+            Proceso Punto2
+            Definir nombre Como Caracter;
+            Definir apellidos Como Caracter;
+            definir edad Como Entero;
+            definir estatura Como Real;
+            
+            Escribir "¿CUAL ES SU NOMBRE?";
+            Leer nombre;
+            
+            Escribir "¿Cuales son sus apellidos?";
+            Leer apellidos;
+            
+            Escribir "¿Cual es tu edad?";
+            Leer edad;
+            
+            Escribir "¿Cual es tu estatura en CM?";
+            Leer estatura;
+            
+            Limpiar Pantalla;
+            
+            Escribir "Su nombre es " , nombre, " " ,apellidos , ", tienes una edad de ", edad, " AÑOS";
+            Escribir "Mides ", estatura ," CMs" ;
+            FinProceso
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DLomUP_4dj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </code>
+    </pre>
+    </section>
+
+    <section>
+    <p><b>Punto 3</b></p>
+    <p>Realizar un programa el cual solicite su nombre y apellidos, también debe capturar nombre y apellidos de su padre y madre. Al finalizar debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo], soy hijo de [Nombre de la Madre] y [Nombre del Padre].</p>
+    <pre>
+    <code>
+            Proceso Punto3
+            Definir nombre Como Caracter;
+            Definir apellidos Como Caracter;
+        
+            Definir nombreM Como Caracter;
+            Definir apellidosM Como Caracter;
+        
+            Definir nombreP Como Caracter;
+            Definir apellidosP Como Caracter;
+        
+            Escribir "DATOS DEL HIJO";
+            Escribir "¿CUAL ES SU NOMBRE?";
+            Leer nombre;
+            Escribir "¿Cuales son sus apellidos?";
+            Leer apellidos;
+        
+            Escribir "DATOS DE LA MADRE";
+            Escribir "¿CUAL ES SU NOMBRE?";
+            Leer nombreM;
+            Escribir "¿Cuales son sus apellidos?";
+            Leer apellidosM;
+        
+            Escribir "DATOS DEL PADRE";
+            Escribir "¿CUAL ES SU NOMBRE?";
+            Leer nombreP;
+            Escribir "¿Cuales son sus apellidos?";
+            Leer apellidosP;
+        
+            Limpiar Pantalla;
+        
+            Escribir "Yo ", nombre , " ", apellidos, " Soy hijo de ", nombreM ," ", apellidosM ," y ", nombreP ," ",apellidosP;
+        
+            FinProceso 
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7NiI2j6fFt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </code>
+    </pre>
+    
+    </section>
+
+    <section>
+        <p><b>Punto 4</b></p>
+        <p>Realizar un programa el cual solicite el nombre de una ciudad capital y el país. Al finalizar debe imprimir en pantalla el siguiente mensaje "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del País]</p>
+        <pre>
+        <code>
+            Proceso Punto4
+            Definir ciudad Como Caracter;
+            Definir pais Como Caracter;
+            
+            Escribir "ESCRIBA EL NOMBRE DE UN PAIS";
+            Leer pais;
+            
+            Escribir "ESCRIBA EL NOMBRE DE SU CIUDAD CAPITAL";
+            Leer ciudad;
+            
+            Escribir "La ciudad ", ciudad, " es la capital del pais ", pais;
+            
+            FinProceso
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ccDSQ-ozSac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </code>
+        </pre>
+
+        </section>
+
+        <section>
+            <h1><b>Punto 5</b></h1>
+            <p>Realizar un programa el cual solicite el nombre de su mascota, edad de la mascota, el tipo de mascota y su nombre completo. Al finalizar el sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de Mascota] es un(a) [Tipo de Mascota], el cual, tiene [Edad de la Mascota] años de edad y [Nombre Completo] es actualmente su dueño(a).</p>
+            <pre>
+            <code>
+            Proceso Punto5
+            Definir mascota Como Caracter;
+            Definir edadMascota Como Entero;
+            Definir raza Como Caracter;
+            Definir nombre Como Caracter;
+                
+            Escribir "¿Cual es tu nombre?";
+            Leer nombre;
+                
+            Escribir "¿Como se llama su mascota?";
+            Leer mascota;
+            Escribir "¿Cual es la edad de su mascota?";
+            Leer edadMascota;
+            Escribir "¿Cual es la raza de la mascota?";
+            Leer raza;
+                
+            Limpiar Pantalla;
+                
+            Escribir mascota, " es un(a) ", raza, " el/la cual tiene ", edadMascota, " Años de edad y " , nombre," es su dueño";
+                
+            FinProceso
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/T3jQ5ivysPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            
+            </code>
+            </pre>
+            </section>
+    </div>
+</body>
+</html>
